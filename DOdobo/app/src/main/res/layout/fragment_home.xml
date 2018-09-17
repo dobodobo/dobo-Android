@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DO! dobo"
+            android:textSize="17sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘의 dobo"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@color/colorAccent"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_todaydobo_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘의 dobo "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="with Seoulight"
+            android:layout_toRightOf="@+id/tv_todaydobo_home"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="120dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@color/colorAccent"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.3"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_inform_dobo_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="24dp"
+                android:text="&quot;서울 도보관광&quot; 이란?"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_inform_seoulight_home"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="24dp"
+                android:text="&quot;Seoulight&quot; 란?"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
