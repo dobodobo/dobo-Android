@@ -5,17 +5,224 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="44dp">
+        android:layout_height="54dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/combined_shape" />
+        <RelativeLayout
+            android:id="@+id/btn_back_informdobo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="18sp"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:text="X"/>
+        </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="&quot;서울 도보관광&quot; 이란?"
-            android:textSize="17sp"
+            android:textSize="20sp"
+            android:fontFamily="@font/nanumsquare_regular"
+            android:textColor="#000000"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="도보 소개"
-        android:textSize="50sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#979797"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#fbfbfb">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical"
+                android:background="@drawable/group_right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="17sp"
+                    android:textColor="#494949"
+                    android:text="서울 도보관광"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="은 서울의 주요 관광 명소를 서울문화관광해설사의 전문적인 해설을 들으며 도보로 탐방하는 관광 프로그램입니다."/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/group_left">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="17sp"
+                    android:textColor="#494949"
+                    android:text="서울 문화관광해설사"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="는 서울을 방문한 국내외 관광객들에게 서울의 역사, 문화, 자연 등 관광자원 전반에대해 상세하고 알기 쉽게 전문적인 해설을 제공하는 자원봉사자입니다."/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="22dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rectangle"
+                    android:layout_marginTop="10dp"
+                    android:text="운영시간"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="평일 10시,14시 / 주말 10시,14시,15시\n*자세한 휴관일 및 운영시간은 각 코스별 상세보기 참고해주세요. "/>
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rectangle"
+                    android:layout_marginTop="20dp"
+                    android:text="신청인원"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="(개인) 1인 이상~10인 이하\n(단체) 21인 이상 - 경복궁, 창경궁, 창덕궁, 성균관 코스\n11인 이상 - 그 외 코스"/>
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rectangle"
+                    android:layout_marginTop="20dp"
+                    android:text="안내언어"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="한국어, 영어, 일본어, 중국어"/>
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rectangle"
+                    android:layout_marginTop="20dp"
+                    android:text="이용료"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="무료 (궁궐입장료 및 문화체험료, 교통비 등은 개인 부담)"/>
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rectangle"
+                    android:layout_marginTop="20dp"
+                    android:text="예약신청"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="개인예약 : 관광일 기준 3일전 인터넷으로 예약\n단체예약 : 관광일 기준 5일전 인터넷으로 예약"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
