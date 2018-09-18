@@ -61,8 +61,7 @@
                 android:layout_marginTop="42dp"
                 android:layout_marginLeft="41dp"
                 android:fontFamily="@font/nanumsquare_bold"
-                android:text="여의나루
-밤도깨비시장"
+                android:text="여의나루\n밤도깨비시장"
                 android:textColor="#000000"
                 android:textSize="21sp" />
 
@@ -155,8 +154,7 @@
             android:fontFamily="@font/nanumsquare_bold"
             android:layout_marginLeft="41dp"
             android:layout_marginTop="42dp"
-            android:text="양재 시민의 숲(매헌)
-꽃 시장 탐방 코스"/>
+            android:text="양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
