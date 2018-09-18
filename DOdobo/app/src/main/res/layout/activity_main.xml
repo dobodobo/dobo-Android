@@ -15,9 +15,10 @@
     <LinearLayout
         android:id="@+id/tab_bottom_main"
         android:layout_width="match_parent"
-        android:layout_height="49dp"
+        android:layout_height="55dp"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="#EEEEEE">
         <RelativeLayout
             android:id="@+id/btn_home_main"
             android:layout_width="0dp"
@@ -28,17 +29,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_centerInParent="true">
-                <ImageView
-                    android:layout_width="33dp"
-                    android:layout_height="17.5dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icon_home_main"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@color/colorPrimaryDark"/>
+                    android:src="#79C8C6"/>
                 <TextView
+                    android:id="@+id/tv_home_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="홈"
-                    android:layout_marginTop="5dp"/>
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="14sp"
+                    android:textColor="#79C8C6"
+                    android:layout_marginTop="2dp"
+                    android:text="홈"/>
             </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
@@ -51,17 +57,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_centerInParent="true">
-                <ImageView
-                    android:layout_width="33dp"
-                    android:layout_height="17.5dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icon_dobo_main"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@color/colorPrimaryDark"/>
+                    android:src="#D1D3D4"/>
                 <TextView
+                    android:id="@+id/tv_dobo_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="도보관광"
-                    android:layout_marginTop="5dp"/>
+                    android:textColor="#89000000"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="2dp"/>
             </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
@@ -74,17 +85,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_centerInParent="true">
-                <ImageView
-                    android:layout_width="33dp"
-                    android:layout_height="17.5dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icon_recommend_main"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@color/colorPrimaryDark"/>
+                    android:src="#D1D3D4"/>
                 <TextView
+                    android:id="@+id/tv_recommend_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="추천관광"
-                    android:layout_marginTop="5dp"/>
+                    android:textColor="#89000000"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="2dp"/>
             </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
@@ -97,17 +113,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_centerInParent="true">
-                <ImageView
-                    android:layout_width="33dp"
-                    android:layout_height="17.5dp"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/icon_mypage_main"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_gravity="center"
-                    android:src="@color/colorPrimaryDark"/>
+                    android:src="#D1D3D4"/>
                 <TextView
+                    android:id="@+id/tv_mypage_main"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="마이페이지"
-                    android:layout_marginTop="5dp"/>
+                    android:textColor="#89000000"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="2dp"/>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

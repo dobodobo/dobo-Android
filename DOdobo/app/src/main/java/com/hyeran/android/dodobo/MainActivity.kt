@@ -1,5 +1,6 @@
 package com.hyeran.android.dodobo
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -16,21 +17,29 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             btn_home_main -> {
                 clearSelected()
                 btn_home_main.isSelected = true
+                icon_home_main.setColorFilter(Color.parseColor("#79C8C6"))
+                tv_home_main.setTextColor(Color.parseColor("#79C8C6"))
                 replaceFragment(HomeTab())
             }
             btn_dobo_main -> {
                 clearSelected()
                 btn_dobo_main.isSelected = true
+                icon_dobo_main.setColorFilter(Color.parseColor("#79C8C6"))
+                tv_dobo_main.setTextColor(Color.parseColor("#79C8C6"))
                 replaceFragment(DoboTab())
             }
             btn_recommend_main -> {
                 clearSelected()
                 btn_recommend_main.isSelected = true
+                icon_recommend_main.setColorFilter(Color.parseColor("#79C8C6"))
+                tv_recommend_main.setTextColor(Color.parseColor("#79C8C6"))
                 replaceFragment(RecommendTab())
             }
             btn_mypage_main -> {
                 clearSelected()
                 btn_mypage_main.isSelected = true
+                icon_mypage_main.setColorFilter(Color.parseColor("#79C8C6"))
+                tv_mypage_main.setTextColor(Color.parseColor("#79C8C6"))
                 replaceFragment(MypageTab())
             }
         }
@@ -69,5 +78,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_dobo_main.isSelected = false
         btn_recommend_main.isSelected = false
         btn_mypage_main.isSelected = false
+        icon_home_main.setColorFilter(Color.parseColor("#D1D3D4"))
+        icon_dobo_main.setColorFilter(Color.parseColor("#D1D3D4"))
+        icon_recommend_main.setColorFilter(Color.parseColor("#D1D3D4"))
+        icon_mypage_main.setColorFilter(Color.parseColor("#D1D3D4"))
+        tv_home_main.setTextColor(Color.parseColor("#89000000"))
+        tv_dobo_main.setTextColor(Color.parseColor("#89000000"))
+        tv_recommend_main.setTextColor(Color.parseColor("#89000000"))
+        tv_mypage_main.setTextColor(Color.parseColor("#89000000"))
+
     }
 }
