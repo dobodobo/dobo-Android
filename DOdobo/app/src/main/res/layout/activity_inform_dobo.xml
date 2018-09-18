@@ -22,9 +22,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/nanumsquare_regular"
-                android:text="X"/>
+                android:text="x"/>
         </RelativeLayout>
         <TextView
             android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="#979797"
+        android:background="#7c979797"
         />
     <ScrollView
         android:layout_width="match_parent"
