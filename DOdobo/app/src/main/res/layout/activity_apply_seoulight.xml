@@ -57,18 +57,39 @@
                     android:layout_height="5dp"
                     android:src="@drawable/star_2"/>
             </RelativeLayout>
-
-            <EditText
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:fontFamily="@font/nanumsquare_regular"
-                android:hint="개인 혹은 단체명"
-                android:textColor="#434343"
-                android:textColorHint="#bcbcbc"
-                android:textSize="12sp"
-                android:gravity="center_vertical"
-                android:background="@android:color/transparent"/>
+                android:layout_weight="3">
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:hint="개인 혹은 단체명"
+                    android:textColor="#434343"
+                    android:textColorHint="#bcbcbc"
+                    android:textSize="12sp"
+                    android:gravity="center_vertical"
+                    android:background="@android:color/transparent"/>
+                <ImageView
+                    android:id="@+id/iv_individual_applyseoulight"
+                    android:layout_width="36dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/individualbtn_unclick"
+                    android:layout_toLeftOf="@+id/iv_group_applyseoulight"
+                    />
+                <ImageView
+                    android:id="@+id/iv_group_applyseoulight"
+                    android:layout_width="55dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/groupbtn_unclick"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    />
+            </RelativeLayout>
         </LinearLayout>
         <View
             android:layout_width="match_parent"
@@ -316,6 +337,7 @@
             android:textColor="#434343"
             android:hint="One of the best ways to make a great vacation quickly horrible is to choose the wrong accommodations for your trip. There is nothing quite as bad as spending a great day of vacation only to come back to a less-than-great place to stay for the night. Anytime you are away from home it is important to choose the best accommodations for your comfort and enjoyment. It doesn’t matter if you are going on a three week trip to Europe of if you are going to a weekend wedding celebration, choosing accommodations should be on the top of your list no matter what.
 "
+            android:gravity="start"
             android:background="@android:color/transparent"/>
     </LinearLayout>
     <RelativeLayout
