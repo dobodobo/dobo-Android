@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <RelativeLayout
@@ -19,36 +20,110 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentRight="true"
-            android:src="@color/colorAccent"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_setting"
             android:layout_marginRight="6dp"/>
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="#7c979797"
+        android:background="#000000"
         />
-    <TextView
-        android:id="@+id/btn_applyseoulight_mypage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="시민해설사 신청하기"/>
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="87dp"
-        android:layout_height="87dp"
-        android:src="@color/colorAccent"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="마이페이지 탭"
-        android:textSize="50sp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <ImageButton
+            android:id="@+id/btn_applyseoulight_mypage"
+            android:layout_width="105dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/group_4_copy_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_modify"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="#79C8C6"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Henrietta Moss"
+                android:fontFamily="@font/nanumsquare_bold"
+                android:textSize="16sp"
+                android:textColor="#434343"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email@email.com"
+                android:textSize="10sp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:textColor="#969696"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="#fbfbfb"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#434343"
+            android:letterSpacing="0.01"
+            android:fontFamily="@font/nanumsquare_bold"
+            android:text="나의 도보 리스트"
+            android:gravity="center_horizontal"
+            android:layout_marginVertical="21dp"
+            />
+        <TextView
+            android:layout_width="113dp"
+            android:layout_height="26dp"
+            android:text="신청 리스트"
+            android:textColor="#434343"
+            android:textSize="14sp"
+            android:fontFamily="@font/nanumsquare_bold"
+            android:gravity="center"
+            android:background="@drawable/home"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_dobolist_mypage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#86c9c9c9"/>
+
     <RelativeLayout
         android:id="@+id/btn_suggestion_mypage"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="54dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="건의사항"
+            android:textSize="14sp"
+            android:fontFamily="@font/nanumsquare_bold"
+            android:textColor="#434343"
             android:layout_marginLeft="40dp"
             android:layout_centerVertical="true"/>
     </RelativeLayout>

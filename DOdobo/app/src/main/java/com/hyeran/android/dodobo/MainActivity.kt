@@ -1,5 +1,6 @@
 package com.hyeran.android.dodobo
 
+import android.content.Intent
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -41,6 +42,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 icon_mypage_main.setColorFilter(Color.parseColor("#79C8C6"))
                 tv_mypage_main.setTextColor(Color.parseColor("#79C8C6"))
                 replaceFragment(MypageTab())
+//                val intent = Intent(applicationContext, MypageTab::class.java)
+//                startActivity(intent)
             }
         }
     }

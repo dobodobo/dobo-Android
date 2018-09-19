@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="239dp"
+    android:layout_height="104dp"
+    android:layout_marginRight="20dp">
+    <ImageView
+        android:id="@+id/iv_listimage_dobolist"
+        android:layout_centerInParent="true"
+        android:layout_width="239dp"
+        android:layout_height="104dp"
+        android:src="#79C8C6"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignTop="@+id/iv_listimage_dobolist"
+        android:layout_alignLeft="@+id/iv_listimage_dobolist"
+        android:layout_margin="8dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:background="#5e8cff"
+            android:layout_marginRight="2dp"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="2dp"
+            android:background="#5e8cff"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_marginRight="2dp"
+            android:background="#5e8cff"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_listname_dobolist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanumsquare_regular"
+        android:textSize="12sp"
+        android:textColor="#2f2f2f"
+        android:layout_alignLeft="@+id/iv_listimage_dobolist"
+        android:layout_alignBottom="@+id/iv_listimage_dobolist"
+        android:layout_margin="15dp"
+        android:text="양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"/>
+</RelativeLayout>
