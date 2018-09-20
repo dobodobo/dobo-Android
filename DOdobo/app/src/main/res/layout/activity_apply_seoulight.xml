@@ -228,47 +228,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1.4">
                 <TextView
-                    android:id="@+id/tv_email_applyseoulight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="이메일"
-                    android:fontFamily="@font/nanumsquare_regular"
-                    android:textSize="14sp"
-                    android:textColor="#434343"
-                    android:layout_centerInParent="true"/>
-                <ImageView
-                    android:layout_toRightOf="@+id/tv_email_applyseoulight"
-                    android:layout_alignTop="@+id/tv_email_applyseoulight"
-                    android:layout_width="5dp"
-                    android:layout_height="5dp"
-                    android:src="@drawable/star_2"/>
-            </RelativeLayout>
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:hint="email@email.com"
-                android:textColorHint="#bcbcbc"
-                android:textColor="#434343"
-                android:fontFamily="@font/nanumsquare_regular"
-                android:textSize="12sp"
-                android:gravity="center_vertical"
-                android:background="@android:color/transparent"/>
-        </LinearLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="#86c9c9c9"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.4">
-                <TextView
                     android:id="@+id/tv_call_applyseoulight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
