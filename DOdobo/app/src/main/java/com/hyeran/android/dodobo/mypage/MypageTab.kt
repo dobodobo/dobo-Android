@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,24 @@ import kotlinx.android.synthetic.main.fragment_mypage.*
 import kotlinx.android.synthetic.main.fragment_mypage.view.*
 
 class MypageTab : Fragment(), View.OnClickListener {
+    /*
+    프래그먼트 리사이클러뷰 오류 해결 참고 링크
+    https://stackoverflow.com/questions/48620115/kotlin-recyclerview-gave-me-null-pointer-exception
+     */
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        dobolistItems = ArrayList()
+        dobolistItems.add(DobolistItem(R.drawable.home, "양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"))
+        dobolistItems.add(DobolistItem(R.drawable.home, "서울 나무 공방 탐험기!\n- 재질부터 완성까지 "))
+
+
+        var rv_dobolist = view!!.findViewById<View>(R.id.rv_dobolist_mypage) as RecyclerView
+        dobolistAdapter = DobolistAdapter(dobolistItems, context!!)
+        rv_dobolist?.layoutManager = LinearLayoutManager(context!!)
+        (rv_dobolist.layoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
+        rv_dobolist?.adapter = dobolistAdapter
+    }
 
     lateinit var dobolistItems : ArrayList<DobolistItem>
     lateinit var dobolistAdapter : DobolistAdapter
@@ -39,16 +58,7 @@ class MypageTab : Fragment(), View.OnClickListener {
         v.btn_applyseoulight_mypage.setOnClickListener(this)
         v.btn_suggestion_mypage.setOnClickListener(this)
 
-        dobolistItems = ArrayList()
-        dobolistItems.add(DobolistItem(R.drawable.home, "양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"))
-        dobolistItems.add(DobolistItem(R.drawable.home, "서울 나무 공방 탐험기!\n- 재질부터 완성까지 "))
 
-        dobolistAdapter = DobolistAdapter(dobolistItems)
-//        rv_dobolist_mypage.setHasFixedSize(true)
-        rv_dobolist_mypage.layoutManager = LinearLayoutManager(activity)
-        //TODO LinearLayoutManager() 안에 뭐 넣어야 하는지 모르겠음. 액티비티일 때 this로는 돌아가는데 프래그먼트일 때 안돌아감.
-        (rv_dobolist_mypage.layoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
-        rv_dobolist_mypage.adapter = dobolistAdapter
         return v
     }
 }
