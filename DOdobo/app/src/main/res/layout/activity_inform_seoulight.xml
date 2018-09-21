@@ -5,27 +5,20 @@
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="54dp">
-
+        android:layout_height="56dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="center"
             android:src="@drawable/combined_shape" />
-        <RelativeLayout
+        <ImageButton
             android:id="@+id/btn_back_informseoulight"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="19dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textSize="20sp"
-                android:fontFamily="@font/nanumsquare_regular"
-                android:text="x"/>
-        </RelativeLayout>
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/group_3"
+            android:background="@android:color/transparent"
+            android:layout_marginLeft="4dp"
+            android:layout_centerVertical="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,55 +28,78 @@
             android:textColor="#000000"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#7c979797"
-        />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="#fbfbfb">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="125dp"
-                android:layout_marginTop="22dp"
+                android:layout_height="121dp"
+                android:layout_marginTop="28dp"
                 android:orientation="vertical"
-                android:background="@drawable/group_right">
-                <TextView
+                android:background="@drawable/group_right"
+                android:paddingHorizontal="32dp">
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nanumsquare_bold"
-                    android:textSize="17sp"
-                    android:textColor="#494949"
-                    android:text="Seoulight"
-                    android:layout_marginLeft="32dp"
-                    android:layout_marginTop="20dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="30dp"
-                    android:layout_marginTop="12dp"
-                    android:textColor="#494949"
-                    android:fontFamily="@font/nanumsquare_regular"
-                    android:textSize="12sp"
-                    android:lineSpacingExtra="3sp"
-                    android:text="는 서울을 방문한 국내외 관광객들에게 1일 테마 서울 도보 관광 코스를 운영하여 신청자들과 함께 서울을 거닐며 해설을 해주는 서울 시민 해설사 입니다."/>
-            </LinearLayout>
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumsquare_bold"
+                        android:textSize="17sp"
+                        android:textColor="#494949"
+                        android:text="Seoulight"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:textColor="#494949"
+                        android:fontFamily="@font/nanumsquare_regular"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="3sp"
+                        android:text="는 서울을 방문한 국내외 관광객들에게 1일 테마 서울 도보 관광 코스를 운영하여 신청자들과 함께 서울을 거닐며 해설을 해주는 서울 시민 해설사 입니다."/>
+                </LinearLayout>
+            </RelativeLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="22dp"
+                android:layout_marginTop="43dp"
                 android:orientation="vertical">
                 <TextView
-                    android:layout_width="135dp"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/rectangle_long"
+                    android:layout_marginTop="21dp"
+                    android:text="Seoulight 의미"
+                    android:fontFamily="@font/nanumsquare_bold"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#494949"
+                    android:fontFamily="@font/nanumsquare_regular"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="11dp"
+                    android:lineSpacingExtra="3sp"
+                    android:text="Seoulight란 Seoulite + light를 조합하여 만든 것으로\n
+&quot;서울을 빛내는 시민&quot;을 의미합니다."/>
+                <TextView
+                    android:layout_width="121dp"
                     android:layout_height="20dp"
                     android:background="@drawable/rectangle_longlong"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="21dp"
                     android:text="Seoulight 신청자격"
                     android:fontFamily="@font/nanumsquare_bold"
                     android:textSize="12sp"
@@ -99,14 +115,15 @@
                     android:fontFamily="@font/nanumsquare_regular"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="11dp"
                     android:lineSpacingExtra="3sp"
-                    android:text="평일 10시,14시 / 주말 10시,14시,15시\n*자세한 휴관일 및 운영시간은 각 코스별 상세보기 참고해주세요. "/>
+                    android:text="대한민국 국적을 가진 만 20세 이상의 성인 누구나 지원 가능합니다.\n
+Seoulight는 개인뿐만 아니라 단체로도 활동 가능합니다."/>
                 <TextView
-                    android:layout_width="135dp"
+                    android:layout_width="121dp"
                     android:layout_height="20dp"
                     android:background="@drawable/rectangle_longlong"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="21dp"
                     android:text="Seoulight 신청방법"
                     android:fontFamily="@font/nanumsquare_bold"
                     android:textSize="12sp"
@@ -122,14 +139,19 @@
                     android:fontFamily="@font/nanumsquare_regular"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="11dp"
                     android:lineSpacingExtra="3sp"
-                    android:text="(개인) 1인 이상~10인 이하\n(단체) 21인 이상 - 경복궁, 창경궁, 창덕궁, 성균관 코스\n11인 이상 - 그 외 코스"/>
+                    android:text="마이 페이지 > Seoulight 신청에서 양식에 맞게 작성하여 신청이 가능합니다.\n
+관리자 심사 후, 신청 승인을 받은 후에\n
+Seoulight가 되어 코스 등록을 할 수 있습니다.\n
+* 단체 신청 시에는 대표자 기준으로 작성해주시면 됩니다.\n
+* 포트폴리오에는 자신의 소개와 경력, 어학 자격증 등 \n
+자신이 Seoulight에 적합한 사람임을 보여주시면 됩니다."/>
                 <TextView
-                    android:layout_width="100dp"
+                    android:layout_width="88dp"
                     android:layout_height="20dp"
                     android:background="@drawable/rectangle_long"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="21dp"
                     android:text="코스 운영 안내"
                     android:fontFamily="@font/nanumsquare_bold"
                     android:textSize="12sp"
@@ -145,18 +167,16 @@
                     android:fontFamily="@font/nanumsquare_regular"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginBottom="27dp"
                     android:paddingHorizontal="30dp"
                     android:lineSpacingExtra="3sp"
-                    android:text="Maui helicopter tours are a great way to see the island from a different perspective and have a fun adventure. If you have never been on a helicopter before, this is a great place to do it. You will see all the beauty that Maui has to offer and can have a great time for the entire family. Tours are not too expensive and last from forty five minutes to over an hour. You can see places that are typically inaccessible with Maui helicopter tours. Places that are not available by foot or vehicle can be seen by air. Breathtaking sights await those who are up for some fun Maui helicopter tours. If you will be staying on the island for a considerable amount of time, you may want to think about doing multiple Maui helicopter tours. There are multiple destinations and you can see all the island has to offer.
-
-East Maui helicopter tours will give you a view of the ten thousand foot volcano, Haleakala or House of the sun. This volcano is dormant and last erupted in 1790. You will be able to see the crater of the volcano and the dry, arid earth surrounding the south side of the volcano’s slop with Maui helicopter tours. The view of this is truly breathtaking and is a sight not to be missed. It is also highly educational with a chance to see a dormant volcano up close, something that can not be seen every day. On the northern and southern sides of the volcano, you will see an incredible different view however. These sides are lush and green and you will be able to see some beautiful waterfalls and gorgeous brush. Tropical rainforests abound on this side of the island and it is something that is not easily accessible by any other means than by air. Maui helicopter tours will allow you to see all of these sights. Make sure to take a camera or video with you when going on Maui helicopter tours to capture the beauty of the scenery and to show friends and family at home all the wonderful things you saw while on vacation.
-
-West Maui helicopter tours have a slightly different view than what you will see in the east. The smaller of the two volcanoes on the island is on this side. Unlike the east volcano, this one is no dormant but extinct with millions of years of erosion cutting deep valleys and into the mountains. The rainfall is high in this are and it results in many waterfalls that cascade over the steep ridges. This area is entirely uninhabited and pure. There is no way to reach this destination except by air so if you want to see this breathtaking view, Maui helicopter tours are the way to go. It is said that this area of Maui is one of the most beautiful natural landscapes in the world and should be missed if you have the opportunity to take Maui helicopter tours to this part of the island. Since it is only accessible by air, this is the only way you will be able to see it.
-
-Molokai Maui helicopter tours will take you to a different island but one that is only nine miles away and easily accessible by air. This island has a very small population with a different culture and scenery. The entire coast of the northeast is lined with cliffs and remote beaches. They are completely inaccessible by any other means of transportation than air. People who live on the island have never even seen this remarkable scenery unless they have taken Maui helicopter tours to view it. When the weather has been rainy and there is a lot of rainfall for he season you will see many astounding waterfalls. The cliffs in this region are among the highest in the world and to see water cascading from the high peaks is simply breathtaking. The short jaunt from Maui with Maui helicopter tours is well worth seeing the beauty of this natural environment.
-
-Maui helicopter tours are a great way to tour those places that can not be reached on foot or by car. The tours last approximately one hour and range from approximately one hundred eight five dollars to two hundred forty dollars person. For many, this is a once in a lifetime opportunity to see natural scenery that will not be available again. Taking cameras and videos to capture the moments will also allow you to relive the tour again and again as you reminisce throughout the years."/>
+                    android:text="- 주제는 대한민국을 소개할 수 있는 분야 모두 가능합니다.\n
+- 도보 관광 코스는 1일 코스로 제한하며, 제한 시간은 없습니다.\n
+- 안내 언어는 한국어를 비롯한 모든 언어로 해설 가능하며,\n
+- 코스 등록 시에 해설 언어를 설정해주시면 됩니다.\n
+- 모집 인원 마감 및 신청 날짜 마감 시, 자동으로 예약이 마감됩니다.\n
+- 최소 인원이 충족되지 않을 시에는 코스가 취소됩니다."/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
