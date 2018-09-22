@@ -2,20 +2,65 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#fbfbfb">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="44dp">
+        android:layout_height="36dp"
+        android:background="#ffffff">
+        <ImageButton
+            android:id="@+id/btn_lanuage_recommend"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/translate_btn_2_copy"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="서울라이트"
-            android:textSize="17sp"
+            android:textSize="20sp"
+            android:fontFamily="@font/nanumsquare_regular"
+            android:textColor="#000000"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="추천 탭"
-        android:textSize="50sp"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="15dp">
+        <ImageButton
+            android:layout_width="18dp"
+            android:layout_height="12dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_filter"
+            android:layout_gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/tv_popularity_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:text="인기순"
+            android:fontFamily="@font/nanumsquare_bold"
+            android:textSize="15sp"
+            android:textColor="#434343"/>
+        <TextView
+            android:id="@+id/tv_deadline_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="마감순"
+            android:fontFamily="@font/nanumsquare_bold"
+            android:textSize="15sp"
+            android:textColor="#c4c4c4"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_seoulightlist_recommend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="16dp">
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
