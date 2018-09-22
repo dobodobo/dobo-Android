@@ -25,11 +25,17 @@ class MypageTab : Fragment(), View.OnClickListener {
         dobolistItems.add(DobolistItem(R.drawable.home, "서울 나무 공방 탐험기!\n- 재질부터 완성까지 "))
 
 
-        var rv_dobolist = view!!.findViewById<View>(R.id.rv_dobolist_mypage) as RecyclerView
+        var rv_applylist = view!!.findViewById<View>(R.id.rv_applylist_mypage) as RecyclerView
         dobolistAdapter = DobolistAdapter(dobolistItems, context!!)
-        rv_dobolist?.layoutManager = LinearLayoutManager(context!!)
-        (rv_dobolist.layoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
-        rv_dobolist?.adapter = dobolistAdapter
+        rv_applylist?.layoutManager = LinearLayoutManager(context!!)
+        (rv_applylist.layoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
+        rv_applylist?.adapter = dobolistAdapter
+
+        var rv_openlist = view!!.findViewById<View>(R.id.rv_openlist_mypage) as RecyclerView
+        dobolistAdapter = DobolistAdapter(dobolistItems, context!!)
+        rv_openlist?.layoutManager = LinearLayoutManager(context!!)
+        (rv_openlist.layoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
+        rv_openlist?.adapter = dobolistAdapter
     }
 
     lateinit var dobolistItems : ArrayList<DobolistItem>
@@ -60,5 +66,7 @@ class MypageTab : Fragment(), View.OnClickListener {
 
 
         return v
+
+        //TODO 일반회원, 서울라이트 따라서 서울라이트 신청 버튼, 별표 아이콘, 개설 리스트 보이고 안보이고 설정
     }
 }
