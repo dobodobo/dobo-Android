@@ -3,6 +3,7 @@ package com.hyeran.android.dodobo.mypage
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.constraint.ConstraintLayout
 import android.text.InputType.*
 import android.view.Gravity
 import android.view.View
@@ -53,13 +54,17 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 startActivity(intent)
             }
             btn_complete_modify -> {
-                val linear = View.inflate(applicationContext, R.layout.toast_complete_modify, null) as RelativeLayout
-                val toastComplete = Toast(applicationContext)
-
-                toastComplete.view = linear
-                toastComplete.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
-
-                toastComplete.show()
+                lateinit var toastView : RelativeLayout
+                // 비밀번호 일치
+                if(et_password1_modify.text.toString() == et_password2_modify.text.toString()) {
+                    toastView = View.inflate(applicationContext, R.layout.toast_complete_modify, null) as RelativeLayout
+                } else {    // 비밀번호 불일치 오류
+                    toastView = View.inflate(applicationContext, R.layout.toast_fail_modify, null) as RelativeLayout
+                }
+                val toast = Toast(applicationContext)
+                toast.view = toastView
+                toast.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
+                toast.show()
             }
         }
     }
@@ -85,7 +90,5 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
         //TODO btn_applyseoulight_modify    -> 서울라이트가 아닌 경우에만 보이도록
         //TODO icon_seoulight_modify        -> 서울라이트인 경우에만 보이도록
         //TODO btn_changephoto_modify       -> 카메라 기능 추가
-        //TODO btn_complete_modify          -> 비밀번호 불일치 토스트창
-        //TODO btn_complete_modify          -> 토스트창 띄울 때 뒤에 배경 어둡게
     }
 }

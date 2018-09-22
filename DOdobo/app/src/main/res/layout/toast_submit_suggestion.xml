@@ -10,7 +10,7 @@
         <ImageView
             android:layout_width="280dp"
             android:layout_height="127dp"
-            android:src="@drawable/dialog"
+            android:src="@drawable/dialog_copy_2"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
 </RelativeLayout>
