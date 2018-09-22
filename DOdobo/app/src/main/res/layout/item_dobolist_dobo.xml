@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="99dp"
+    android:orientation="horizontal"
+    android:layout_marginBottom="10dp"
+    android:background="#ffffff">
+    <ImageView
+        android:id="@+id/iv_image_dobo"
+        android:layout_width="130dp"
+        android:layout_height="match_parent"
+        android:src="@color/colorAccent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_title_dobo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="11dp"
+            android:text="여기는 타이틀"
+            android:fontFamily="@font/nanumsquare_bold"
+            android:textSize="15sp"
+            android:textColor="#434343"
+            />
+        <TextView
+            android:id="@+id/tv_explain_dobo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="13dp"
+            android:fontFamily="@font/nanumsquare_regular"
+            android:textColor="#434343"
+            android:textSize="9sp"
+            android:text="여기는 코스에 대한 설명입니다. 길이는 이정도 이구요 만약 길이를 넘는다면 얄짤없이 잘라주세요! 이것처럼!!!"/>
+    </LinearLayout>
+</LinearLayout>
