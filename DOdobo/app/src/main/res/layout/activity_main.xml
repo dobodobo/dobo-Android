@@ -4,132 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
     <FrameLayout
         android:id="@+id/frame_main"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_above="@+id/tab_bottom_main"></FrameLayout>
-
     <LinearLayout
         android:id="@+id/tab_bottom_main"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="56dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:background="#EEEEEE">
-        <RelativeLayout
+        android:background="#ffffff"
+        android:elevation="5dp">
+        <ImageView
             android:id="@+id/btn_home_main"
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_centerInParent="true">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/icon_home_main"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:src="#79C8C6"/>
-                <TextView
-                    android:id="@+id/tv_home_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/nanumsquare_bold"
-                    android:textSize="14sp"
-                    android:textColor="#79C8C6"
-                    android:layout_marginTop="2dp"
-                    android:text="홈"/>
-            </LinearLayout>
-        </RelativeLayout>
-        <RelativeLayout
+            android:paddingVertical="6dp"
+            android:src="@drawable/ic_home_p"/>
+        <ImageView
             android:id="@+id/btn_dobo_main"
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_centerInParent="true">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/icon_dobo_main"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:src="#D1D3D4"/>
-                <TextView
-                    android:id="@+id/tv_dobo_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="도보관광"
-                    android:textColor="#89000000"
-                    android:fontFamily="@font/nanumsquare_bold"
-                    android:textSize="14sp"
-                    android:layout_marginTop="2dp"/>
-            </LinearLayout>
-        </RelativeLayout>
-        <RelativeLayout
+            android:paddingVertical="6dp"
+            android:src="@drawable/ic_dobo"/>
+        <ImageView
             android:id="@+id/btn_recommend_main"
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_centerInParent="true">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/icon_recommend_main"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:src="#D1D3D4"/>
-                <TextView
-                    android:id="@+id/tv_recommend_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="추천관광"
-                    android:textColor="#89000000"
-                    android:fontFamily="@font/nanumsquare_bold"
-                    android:textSize="14sp"
-                    android:layout_marginTop="2dp"/>
-            </LinearLayout>
-        </RelativeLayout>
-        <RelativeLayout
+            android:paddingVertical="6dp"
+            android:src="@drawable/ic_recommend"/>
+        <ImageView
             android:id="@+id/btn_mypage_main"
             android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_centerInParent="true">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/icon_mypage_main"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_gravity="center"
-                    android:src="#D1D3D4"/>
-                <TextView
-                    android:id="@+id/tv_mypage_main"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="마이페이지"
-                    android:textColor="#89000000"
-                    android:fontFamily="@font/nanumsquare_bold"
-                    android:textSize="14sp"
-                    android:layout_marginTop="2dp"/>
-            </LinearLayout>
-        </RelativeLayout>
+            android:paddingVertical="6dp"
+            android:src="@drawable/ic_mypage"/>
     </LinearLayout>
+
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/vp_main"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"></android.support.v4.view.ViewPager>-->
 </RelativeLayout>

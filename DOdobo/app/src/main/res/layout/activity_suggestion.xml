@@ -2,10 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#ffffff">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="54dp">
+        android:layout_height="36dp">
         <ImageView
             android:id="@+id/btn_back_suggestion"
             android:layout_width="46dp"
@@ -22,15 +23,9 @@
             android:textColor="#000000"
             android:layout_centerInParent="true"/>
     </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="#7c979797"
-        />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="64dp"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
@@ -38,17 +33,16 @@
             android:textSize="14sp"
             android:textColor="#434343"
             android:text="제목"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="50dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="59dp"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginHorizontal="30dp"
-            android:gravity="center"
+            android:layout_marginLeft="50dp"
             android:hint="제목을 입력해주세요."
+            android:layout_marginTop="30dp"
             android:letterSpacing="0.01"
             android:singleLine="true"
             android:background="@android:color/transparent"
@@ -74,17 +68,17 @@
             android:layout_marginTop="17dp"
             android:text="내용"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="59dp"
             />
 
         <EditText
             android:id="@+id/t"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginHorizontal="50dp"
+            android:layout_marginHorizontal="54dp"
             android:layout_marginVertical="16dp"
             android:background="@android:color/transparent"
-            android:hint="One of the best ways to make a great vacation quickly horrible is to choose the wrong accommodations for your trip. There is nothing quite as bad as spending a great day of vacation only to come back to a less-than-great place to stay for the night. Anytime you are away from home it is important to choose the best accommodations for your comfort and enjoyment. It doesn’t matter if you are going on a three week trip to Europe of if you are going to a weekend wedding celebration, choosing accommodations should be on the top of your list no matter what."
+            android:hint="건의 내용을 입력해주세요."
             android:letterSpacing="0.01"
             android:gravity="top"
             android:textColor="#434343"
@@ -94,8 +88,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:background="#fbfbfb">
         <Button
+            android:id="@+id/btn_submit_suggestion"
             android:layout_width="98dp"
             android:layout_height="30dp"
             android:background="@drawable/rectangle_2"

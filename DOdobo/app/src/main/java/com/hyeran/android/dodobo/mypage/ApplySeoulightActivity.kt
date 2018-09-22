@@ -2,7 +2,10 @@ package com.hyeran.android.dodobo.mypage
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.RelativeLayout
+import android.widget.Toast
 import com.hyeran.android.dodobo.R
 import kotlinx.android.synthetic.main.activity_apply_seoulight.*
 
@@ -22,6 +25,14 @@ class ApplySeoulightActivity : AppCompatActivity(), View.OnClickListener {
                 iv_group_applyseoulight.isSelected = true
                 iv_group_applyseoulight.setImageResource(R.drawable.group_click)
             }
+            btn_complete_applyseoulight -> {
+                val toastView = View.inflate(applicationContext, R.layout.toast_complete_applyseoulight, null) as RelativeLayout
+                val toastComplete = Toast(applicationContext)
+
+                toastComplete.view = toastView
+                toastComplete.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
+                toastComplete.show()
+            }
         }
     }
 
@@ -32,6 +43,8 @@ class ApplySeoulightActivity : AppCompatActivity(), View.OnClickListener {
         btn_back_applyseoulight.setOnClickListener(this)
         iv_individual_applyseoulight.setOnClickListener(this)
         iv_group_applyseoulight.setOnClickListener(this)
+        btn_complete_applyseoulight.setOnClickListener(this)
+
     }
 
     fun clearSelected() {
