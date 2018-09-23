@@ -1,12 +1,13 @@
 package com.hyeran.android.dodobo
 
 import android.app.Application
+import com.hyeran.android.dodobo.Network.NetworkService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApplicationController : Application(){
     lateinit var networkService: NetworkService
-    private val baseUrl = "http://52.78.25.56:3000/"
+    private val baseUrl = "http://52.78.25.56:3000/api/"
 
     companion object {
         lateinit var instance : ApplicationController
