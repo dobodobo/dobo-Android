@@ -65,7 +65,7 @@
                         android:fontFamily="@font/nanumsquare_regular"
                         android:textSize="12sp"
                         android:lineSpacingExtra="3sp"
-                        android:text="은 서울의 주요 관광 명소를 서울문화관광해설사의 전문적인 해설을 들으며 도보로 탐방하는 관광 프로그램입니다."/>
+                        android:text="서울의 주요 관광 명소를 서울문화관광해설사의 전문적인 해설을 들으며 도보로 탐방하는 관광 프로그램입니다."/>
                 </LinearLayout>
             </RelativeLayout>
             <RelativeLayout
@@ -96,7 +96,7 @@
                         android:fontFamily="@font/nanumsquare_regular"
                         android:textSize="12sp"
                         android:lineSpacingExtra="3sp"
-                        android:text="는 서울을 방문한 국내외 관광객들에게 서울의 역사, 문화, 자연 등 관광자원 전반에대해 상세하고 알기 쉽게 전문적인 해설을 제공하는 자원봉사자입니다."/>
+                        android:text="서울을 방문한 국내외 관광객들에게 서울의 역사, 문화, 자연 등 관광자원 전반에대해 상세하고 알기 쉽게 전문적인 해설을 제공하는 자원봉사자입니다."/>
                 </LinearLayout>
             </RelativeLayout>
             <LinearLayout

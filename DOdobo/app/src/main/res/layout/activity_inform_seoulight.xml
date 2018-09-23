@@ -64,7 +64,7 @@
                         android:fontFamily="@font/nanumsquare_regular"
                         android:textSize="12sp"
                         android:lineSpacingExtra="3sp"
-                        android:text="는 서울을 방문한 국내외 관광객들에게 1일 테마 서울 도보 관광 코스를 운영하여 신청자들과 함께 서울을 거닐며 해설을 해주는 서울 시민 해설사 입니다."/>
+                        android:text="서울을 방문한 국내외 관광객들에게 1일 테마 서울 도보 관광 코스를 운영하여 신청자들과 함께 서울을 거닐며 해설을 해주는 서울 시민 해설사 입니다."/>
                 </LinearLayout>
             </RelativeLayout>
             <LinearLayout
