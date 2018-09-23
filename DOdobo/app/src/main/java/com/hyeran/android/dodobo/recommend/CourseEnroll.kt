@@ -13,6 +13,11 @@ import kotlinx.android.synthetic.main.activity_course_enroll.*
 import java.io.FileNotFoundException
 import java.io.IOException
 
+/*
+갤러리에서 이미지 가져오기 참고 링크
+http://ankyu.entersoft.kr/Lecture/android/gallery_01.asp
+*/
+
 class CourseEnroll : AppCompatActivity(), View.OnClickListener {
 
     var REQ_CODE_SELECT_IMAGE = 100;

@@ -3,7 +3,6 @@ package com.hyeran.android.dodobo.mypage
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
 import android.text.InputType.*
 import android.view.Gravity
 import android.view.View
@@ -11,14 +10,16 @@ import android.widget.Toast
 import com.hyeran.android.dodobo.R
 import kotlinx.android.synthetic.main.activity_modify.*
 import android.widget.RelativeLayout
-import android.R.attr.data
 import android.provider.MediaStore.Images
-import android.graphics.Bitmap
 import android.app.Activity
 import android.widget.ImageView
 import java.io.FileNotFoundException
 import java.io.IOException
 
+/*
+갤러리에서 이미지 가져오기 참고 링크
+http://ankyu.entersoft.kr/Lecture/android/gallery_01.asp
+*/
 
 class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
