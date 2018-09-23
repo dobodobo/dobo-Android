@@ -60,6 +60,7 @@
                 android:textSize="14sp"
                 android:textColor="#000000"/>
             <EditText
+                android:inputType="textEmailAddress"
                 android:layout_width="249dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="12dp"
@@ -86,7 +87,6 @@
                 android:background="@drawable/login_textbox"
                 android:paddingLeft="30dp"
                 android:inputType="textPassword"
-                android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="14sp"
                 />
             <RelativeLayout

@@ -11,6 +11,7 @@ import com.hyeran.android.dodobo.mypage.MypageTab
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
+
     val bundle = Bundle()
 
     override fun onClick(v: View?) {
