@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.hyeran.android.dodobo.MainActivity
+import com.hyeran.android.dodobo.NetworkService
 import com.hyeran.android.dodobo.R
 import kotlinx.android.synthetic.main.activity_login.*
 

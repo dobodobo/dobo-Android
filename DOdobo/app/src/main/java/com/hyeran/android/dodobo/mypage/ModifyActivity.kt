@@ -11,6 +11,13 @@ import android.widget.Toast
 import com.hyeran.android.dodobo.R
 import kotlinx.android.synthetic.main.activity_modify.*
 import android.widget.RelativeLayout
+import android.R.attr.data
+import android.provider.MediaStore.Images
+import android.graphics.Bitmap
+import android.app.Activity
+import android.widget.ImageView
+import java.io.FileNotFoundException
+import java.io.IOException
 
 
 class ModifyActivity : AppCompatActivity(), View.OnClickListener {
@@ -20,12 +27,20 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
     var status2 = 0
     // 초기 inputType 저장할 변수
     var inputTypeInvisible = 0
-//    val dialog = CompleteDialog(this)
+
+    var REQ_CODE_SELECT_IMAGE = 100;
 
     override fun onClick(v: View?) {
         when(v) {
             btn_back_modify -> {
                 finish()
+            }
+            btn_changephoto_modify -> {
+                // 갤러리 이동
+                var intent = Intent(Intent.ACTION_PICK)
+                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE)
+                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                startActivityForResult(intent, REQ_CODE_SELECT_IMAGE)
             }
             btn_show1_modify -> {
                 if(status1 == 0) {  // 비밀번호 보이게
@@ -61,10 +76,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 } else {    // 비밀번호 불일치 오류
                     toastView = View.inflate(applicationContext, R.layout.toast_fail_modify, null) as RelativeLayout
                 }
-                val toast = Toast(applicationContext)
-                toast.view = toastView
-                toast.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
-                toast.show()
+                openToast(toastView)
             }
         }
     }
@@ -75,6 +87,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
         // 클릭 리스너 등록
         btn_back_modify.setOnClickListener(this)
+        btn_changephoto_modify.setOnClickListener(this)
         btn_show1_modify.setOnClickListener(this)
         btn_show2_modify.setOnClickListener(this)
         btn_applyseoulight_modify.setOnClickListener(this)
@@ -89,6 +102,37 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
         //TODO btn_applyseoulight_modify    -> 서울라이트가 아닌 경우에만 보이도록
         //TODO icon_seoulight_modify        -> 서울라이트인 경우에만 보이도록
-        //TODO btn_changephoto_modify       -> 카메라 기능 추가
+    }
+
+    // 선택한 이미지 데이터 받기
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode === REQ_CODE_SELECT_IMAGE) {
+            if (resultCode === Activity.RESULT_OK) {
+                try {
+                    //이미지 데이터를 비트맵으로 받아온다.
+                    val image_bitmap = Images.Media.getBitmap(contentResolver, data!!.getData())
+                    val image = findViewById(R.id.iv_profile_modify) as ImageView
+
+                    //배치해놓은 ImageView에 set
+                    image.setImageBitmap(image_bitmap)
+                } catch (e: FileNotFoundException) {
+                    e.printStackTrace()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+            }
+        }
+    }
+
+    // 토스트 띄우기
+    fun openToast(toastView : RelativeLayout) {
+        val toast = Toast(applicationContext)
+        toast.view = toastView
+        toast.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
+        toast.show()
     }
 }

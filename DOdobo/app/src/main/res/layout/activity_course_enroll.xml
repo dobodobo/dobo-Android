@@ -374,14 +374,26 @@
                     android:layout_weight="2"
                     android:layout_height="wrap_content"></RelativeLayout>
             </LinearLayout>
-            <ImageButton
-                android:layout_width="91dp"
-                android:layout_height="91dp"
-                android:src="@drawable/ic_ad_image"
-                android:background="@android:color/transparent"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="49dp"
-                android:layout_marginBottom="18dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/btn_addphoto_courseenroll"
+                    android:layout_width="91dp"
+                    android:layout_height="91dp"
+                    android:src="@drawable/ic_ad_image"
+                    android:background="@android:color/transparent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="49dp"
+                    android:layout_marginBottom="18dp"/>
+                <ImageView
+                    android:id="@+id/iv_photo_courseenroll"
+                    android:layout_width="91dp"
+                    android:layout_height="91dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
