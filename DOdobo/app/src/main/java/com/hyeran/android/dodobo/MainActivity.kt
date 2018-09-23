@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
-import com.hyeran.android.dodobo.dobo.DoboTab
+import com.hyeran.android.dodobo.dobo.Dobolist
 import com.hyeran.android.dodobo.home.HomeTab
 import com.hyeran.android.dodobo.home.Category
 import com.hyeran.android.dodobo.mypage.MypageTab
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 clearSelected()
                 btn_dobo_main.isSelected = true
                 btn_dobo_main.setImageResource(R.drawable.ic_dobo_p)
-                replaceFragment(DoboTab())
+                replaceFragment(Dobolist())
             }
             btn_recommend_main -> {
                 clearSelected()

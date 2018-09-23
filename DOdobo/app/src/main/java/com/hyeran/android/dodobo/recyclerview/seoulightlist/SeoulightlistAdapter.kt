@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.recommend
+package com.hyeran.android.dodobo.recyclerview.seoulightlist
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

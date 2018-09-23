@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.recommend
+package com.hyeran.android.dodobo.recyclerview.seoulightlist
 
 data class SeoulightlistItem (
     var image : Int,

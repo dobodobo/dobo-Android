@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.dobo
+package com.hyeran.android.dodobo.recyclerview.dobolist
 
 data class DobolistItem (
         var image : Int,

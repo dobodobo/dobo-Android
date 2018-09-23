@@ -22,7 +22,8 @@
         <activity android:name=".mypage.ModifyActivity" />
         <activity android:name=".mypage.ApplySeoulightActivity" />
         <activity android:name=".mypage.MypageTab" />
-        <activity android:name=".recommend.SeoulightDetailActivity"></activity>
+        <activity android:name=".recommend.SeoulightDetailActivity" />
+        <activity android:name=".dobo.DoboDetailActivity"></activity>
     </application>
 
 </manifest>

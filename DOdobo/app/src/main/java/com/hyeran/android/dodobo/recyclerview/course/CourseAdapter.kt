@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.recommend
+package com.hyeran.android.dodobo.recyclerview.course
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater

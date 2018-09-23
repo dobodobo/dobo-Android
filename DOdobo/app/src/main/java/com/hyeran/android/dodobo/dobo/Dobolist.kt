@@ -1,5 +1,6 @@
 package com.hyeran.android.dodobo.dobo
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -8,8 +9,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hyeran.android.dodobo.R
+import com.hyeran.android.dodobo.recyclerview.dobolist.DobolistAdapter
+import com.hyeran.android.dodobo.recyclerview.dobolist.DobolistItem
 
-class DoboTab : Fragment() {
+class Dobolist : Fragment(), View.OnClickListener {
+    override fun onClick(v: View?) {
+        var intent = Intent(context, DoboDetailActivity::class.java)
+        startActivity(intent)
+    }
+
     lateinit var dobolistItems : ArrayList<DobolistItem>
     lateinit var dobolistAdapter : DobolistAdapter
 
@@ -30,6 +38,7 @@ class DoboTab : Fragment() {
 
         var rv_dobolist = view!!.findViewById<View>(R.id.rv_dobolist_dobo) as RecyclerView
         dobolistAdapter = DobolistAdapter(dobolistItems, context!!)
+        dobolistAdapter.setOnItemClickListener(this)
         rv_dobolist?.layoutManager = LinearLayoutManager(context!!)
         rv_dobolist?.adapter = dobolistAdapter
 

@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.recommend
+package com.hyeran.android.dodobo.recyclerview.course
 
 data class CourseItem (
     var icon : Int,

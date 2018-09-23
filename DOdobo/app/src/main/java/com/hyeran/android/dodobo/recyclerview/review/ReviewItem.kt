@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.recommend
+package com.hyeran.android.dodobo.recyclerview.review
 
 data class ReviewItem (
         var writer : String,

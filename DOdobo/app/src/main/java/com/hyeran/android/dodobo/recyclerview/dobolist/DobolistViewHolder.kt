@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.dobo
+package com.hyeran.android.dodobo.recyclerview.dobolist
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

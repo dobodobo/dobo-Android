@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.dobo
+package com.hyeran.android.dodobo.recyclerview.dobolist
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -9,8 +9,15 @@ import com.hyeran.android.dodobo.R
 
 // DataClass와 ViewHolder 연결
 class DobolistAdapter(private var dobolistItems : ArrayList<DobolistItem>, val context : Context) : RecyclerView.Adapter<DobolistViewHolder>(){
+    private  lateinit var  onItemClick : View.OnClickListener
+
+    fun setOnItemClickListener(l : View.OnClickListener) {
+        onItemClick = l
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DobolistViewHolder {
         val mainView : View = LayoutInflater.from(parent.context).inflate(R.layout.item_dobolist_dobo, parent, false)
+        mainView.setOnClickListener(onItemClick)
         return DobolistViewHolder(mainView)
     }
 
