@@ -59,6 +59,11 @@ class Seoulightlist : Fragment(), View.OnClickListener {
             tv_popularity_recommend.setTextColor(Color.parseColor("#c4c4c4"))
         }
 
+        v.btn_enroll_seoulight.setOnClickListener {
+            val intent = Intent(context, CourseEnroll::class.java)
+            startActivity(intent)
+        }
+
         return v
     }
 

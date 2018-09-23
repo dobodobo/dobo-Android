@@ -56,11 +56,26 @@
             android:textSize="15sp"
             android:textColor="#c4c4c4"/>
     </LinearLayout>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_seoulightlist_recommend"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="16dp">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_seoulightlist_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="16dp">
+        </android.support.v7.widget.RecyclerView>
+        <ImageButton
+            android:id="@+id/btn_enroll_seoulight"
+            android:layout_width="68dp"
+            android:layout_height="74dp"
+            android:src="@drawable/normal"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="27dp"
+            android:layout_marginBottom="33dp"
+            />
+    </RelativeLayout>
 </LinearLayout>
