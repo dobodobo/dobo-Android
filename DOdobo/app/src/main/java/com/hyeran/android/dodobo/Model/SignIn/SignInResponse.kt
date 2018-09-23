@@ -7,19 +7,11 @@ import com.hyeran.android.dodobo.Model.BaseModel
 
 data class SignInResponse(
 
-        @SerializedName("status")
-        @Expose
-        open var status : Int?=null,
-
-        @SerializedName("message")
-        @Expose
-        open var message : String?=null,
-
         @SerializedName("result")
         @Expose
         open var result : SignInResult?=null
 
-)
+) : BaseModel()
 
 
 data class SignInResult(
