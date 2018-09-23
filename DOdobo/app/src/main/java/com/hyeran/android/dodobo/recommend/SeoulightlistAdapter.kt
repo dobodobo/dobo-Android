@@ -9,8 +9,16 @@ import com.hyeran.android.dodobo.R
 
 // DataClass와 ViewHolder 연결
 class SeoulightlistAdapter(private var seoulightlistItems: ArrayList<SeoulightlistItem>, val context : Context) : RecyclerView.Adapter<SeoulightlistViewHolder>() {
+    private  lateinit var  onItemClick : View.OnClickListener
+
+    fun setOnItemClickListener(l : View.OnClickListener) {
+        onItemClick = l
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SeoulightlistViewHolder {
-        val mainView : View = LayoutInflater.from(parent.context).inflate(R.layout.item_seoulightlist_recommend, parent, false)
+        val mainView : View = LayoutInflater.from(parent.context).inflate(R.layout.item_seoulightlist, parent, false)
+        mainView.setOnClickListener(onItemClick)
+
         return SeoulightlistViewHolder(mainView)
     }
 
@@ -22,5 +30,6 @@ class SeoulightlistAdapter(private var seoulightlistItems: ArrayList<Seoulightli
         holder.seoulightLanguage.text = seoulightlistItems[position].language
         holder.seoulightDate.text = seoulightlistItems[position].date
         holder.seoulightPeople.text = seoulightlistItems[position].people
+
     }
 }
