@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/item_seoulightlist"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="99dp"
@@ -37,8 +38,8 @@
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="10sp"
                 android:textColor="#ffffff"
-                android:layout_width="45dp"
-                android:layout_height="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="일본어"
                 android:background="@drawable/ic_language_type"/>
@@ -56,6 +57,7 @@
                 android:text="2018.09.01"
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="12sp"
+                android:layout_gravity="center_vertical"
                 android:textColor="#434343"/>
             <ImageView
                 android:layout_width="11dp"
@@ -71,6 +73,7 @@
                 android:textSize="12sp"
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textColor="#434343"
+                android:layout_gravity="center_vertical"
                 android:text="3-5 명"/>
         </LinearLayout>
     </RelativeLayout>

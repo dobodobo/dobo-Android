@@ -22,7 +22,7 @@
         <ImageButton
             android:id="@+id/ib_all_seoulightcategory"
             android:layout_width="95dp"
-            android:layout_height="95dp"
+            android:layout_height="100dp"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_all"
             android:layout_centerInParent="true"/>

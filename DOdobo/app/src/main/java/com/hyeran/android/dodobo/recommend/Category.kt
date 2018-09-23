@@ -11,7 +11,7 @@ import com.hyeran.android.dodobo.recommend.Seoulightlist
 import kotlinx.android.synthetic.main.fragment_category_seoulight.view.*
 
 
-class RecommendTab : Fragment(), View.OnClickListener {
+class Category : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         replaceFragment(Seoulightlist())
     }

@@ -20,8 +20,9 @@
         <activity android:name=".home.InformSeoulightActivity" />
         <activity android:name=".mypage.SuggestionActivity" />
         <activity android:name=".mypage.ModifyActivity" />
-        <activity android:name=".mypage.ApplySeoulightActivity"></activity>
-        <activity android:name=".mypage.MypageTab"></activity>
+        <activity android:name=".mypage.ApplySeoulightActivity" />
+        <activity android:name=".mypage.MypageTab" />
+        <activity android:name=".recommend.SeoulightDetailActivity"></activity>
     </application>
 
 </manifest>

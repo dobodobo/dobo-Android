@@ -11,7 +11,7 @@
             android:id="@+id/btn_back_applyseoulight"
             android:layout_width="46dp"
             android:layout_height="46dp"
-            android:src="@drawable/ic_back_btn"
+            android:src="@drawable/ic_back_btn_mint"
             android:layout_marginLeft="5dp"
             android:layout_centerVertical="true"/>
         <TextView

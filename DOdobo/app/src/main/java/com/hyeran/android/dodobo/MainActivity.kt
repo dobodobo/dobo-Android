@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment
 import android.view.View
 import com.hyeran.android.dodobo.dobo.DoboTab
 import com.hyeran.android.dodobo.home.HomeTab
-import com.hyeran.android.dodobo.home.RecommendTab
+import com.hyeran.android.dodobo.home.Category
 import com.hyeran.android.dodobo.mypage.MypageTab
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 clearSelected()
                 btn_recommend_main.isSelected = true
                 btn_recommend_main.setImageResource(R.drawable.ic_recommend_p)
-                replaceFragment(RecommendTab())
+                replaceFragment(Category())
             }
             btn_mypage_main -> {
                 clearSelected()
