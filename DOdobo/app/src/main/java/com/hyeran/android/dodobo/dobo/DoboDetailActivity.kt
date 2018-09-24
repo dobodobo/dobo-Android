@@ -3,6 +3,7 @@ package com.hyeran.android.dodobo.dobo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import com.hyeran.android.dodobo.AddReviewDialog
 import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
 import com.hyeran.android.dodobo.recyclerview.course.CourseItem
 import com.hyeran.android.dodobo.recyclerview.review.ReviewAdapter
@@ -28,6 +29,10 @@ class DoboDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dobo_detail)
         btn_back_dobodetail.setOnClickListener {
             finish()
+        }
+
+        btn_addreview_dobo.setOnClickListener {
+            AddReviewDialog(this).show()
         }
 
         // 코스 리사이클러뷰

@@ -230,15 +230,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="#86c9c9c9"/>
-            <TextView
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="리뷰"
-                android:fontFamily="@font/nanumsquare_extrabold"
-                android:textSize="17sp"
-                android:textColor="#434343"
+                android:orientation="horizontal"
                 android:layout_marginTop="18dp"
-                android:layout_marginLeft="16dp"/>
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="코스"
+                    android:fontFamily="@font/nanumsquare_extrabold"
+                    android:textSize="17sp"
+                    android:textColor="#434343"/>
+                <ImageButton
+                    android:id="@+id/btn_addreview_seoulight"
+                    android:layout_width="21dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_add_review_btn"
+                    android:background="@android:color/transparent"/>
+            </RelativeLayout>
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_review_seoulight"
                 android:layout_width="match_parent"
