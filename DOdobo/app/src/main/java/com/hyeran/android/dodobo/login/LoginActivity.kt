@@ -34,8 +34,6 @@ class LoginActivity : AppCompatActivity() {
         btn_signin_login.setOnClickListener {
             postSignIn()
 
-            // 비밀번호 오류 시
-            // et_password_login.setBackgroundResource(R.drawable.login_textbox_error)
         }
     }
 
@@ -51,41 +49,32 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<SignInResponse>?, t: Throwable?) {
                 Log.v("login 실패",t!!.message.toString())
-                //TODO: 로그인 실패 팝업 띄우기
+                et_password_login.setBackgroundResource(R.drawable.login_textbox_error)
             }
 
             override fun onResponse(call: Call<SignInResponse>?, response: Response<SignInResponse>?) {
+
+                Log.e("dd ", "ddddd")
+
                 if(response!!.isSuccessful){
 
-                    val message = response.body().message.toString()
+                    et_password_login.setBackgroundResource(R.drawable.login_textbox)
+                    Log.v("login 성공",response!!.body().message)
+                    token = response!!.body()!!.result!!.token!!.toString()
+                    Log.e("토큰: ", token)
+                    SharedPreference.instance!!.setPrefData("token",token)
+                    SharedPreference.instance!!.setPrefData("email",response!!.body()!!.result!!.profile.email)
 
-                    if (message == "success") {
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
 
-                        Log.v("login 성공",response!!.body().message)
-                        token = response!!.body()!!.result!!.token!!.toString()
-                        Log.e("토큰: ", token)
-                        SharedPreference.instance!!.setPrefData("token",token)
-                        SharedPreference.instance!!.setPrefData("email",response!!.body()!!.result!!.profile.email)
-
-                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
-                        finish()
-
-                    } else if (message == "not_signin"){
-                        Log.v("login 실패", response.body().message)
-                        //TODO: 아이디 배경 박스 빨간색으로 바꾸기 - 아이디가 존재하지 않습니다
-
-                    } else if (message == "not_match_email_or_pw") {
-                        Log.v("login 실패",response.body().message)
-                        //TODO: 비번 배경 박스 빨간색으로 바꾸기 - 아이디 또는 비밀번호가 틀렸습니다.
-                    } else {
-                        Log.v("login 실패",response.body().message)
-                        //TODO: 팝업 및 토스트 - title: 서버 에러 / content: 서버가 불안정 합니다.
-                    }
-
+                } else {
+                    et_password_login.setBackgroundResource(R.drawable.login_textbox_error)
                 }
+
             }
 
         })

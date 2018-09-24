@@ -6,9 +6,11 @@ import com.hyeran.android.dodobo.Model.BaseModel
 
 
 data class SignInResponse(
+
         @SerializedName("result")
         @Expose
         open var result : SignInResult?=null
+
 ) : BaseModel()
 
 
