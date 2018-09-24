@@ -21,9 +21,7 @@ import com.hyeran.android.dodobo.Network.NetworkService
 import com.hyeran.android.dodobo.Util.SharedPreference
 import retrofit2.Call
 import retrofit2.Response
-import java.io.FileNotFoundException
-import java.io.IOException
-import javax.security.auth.callback.Callback
+import java.io.*
 
 /*
 갤러리에서 이미지 가져오기 참고 링크
@@ -41,19 +39,15 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
     // 초기 inputType 저장할 변수
     var inputTypeInvisible = 0
 
-    var REQ_CODE_SELECT_IMAGE = 100;
+    var REQ_CODE_SELECT_IMAGE = 100
 
     override fun onClick(v: View?) {
         when(v) {
             btn_back_modify -> {
                 finish()
             }
-            btn_changephoto_modify -> {
-                // 갤러리 이동
-                var intent = Intent(Intent.ACTION_PICK)
-                intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE)
-                intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-                startActivityForResult(intent, REQ_CODE_SELECT_IMAGE)
+            btn_changeimg_modify -> {
+                changeImg() // 갤러리 불러오기
             }
             btn_show1_modify -> {
                 if(status1 == 0) {  // 비밀번호 보이게
@@ -86,11 +80,13 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 // 비밀번호 일치
                 if(et_password1_modify.text.toString() == et_password2_modify.text.toString()) {
                     putPassword()
-                    toastView = View.inflate(baseContext, R.layout.toast_complete_modify, null) as RelativeLayout
+                    Toast.makeText(this, "프로필이 수정되었습니다.", Toast.LENGTH_SHORT).show()
+                    //toastView = View.inflate(baseContext, R.layout.toast_complete_modify, null) as RelativeLayout
                 } else {    // 비밀번호 불일치 오류
-                    toastView = View.inflate(baseContext, R.layout.toast_fail_modify, null) as RelativeLayout
+                    Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+                    //toastView = View.inflate(baseContext, R.layout.toast_fail_modify, null) as RelativeLayout
                 }
-                openToast(toastView)
+                //openToast(toastView)
             }
         }
     }
@@ -104,7 +100,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
         // 클릭 리스너 등록
         btn_back_modify.setOnClickListener(this)
-        btn_changephoto_modify.setOnClickListener(this)
+        btn_changeimg_modify.setOnClickListener(this)
         btn_show1_modify.setOnClickListener(this)
         btn_show2_modify.setOnClickListener(this)
         btn_applyseoulight_modify.setOnClickListener(this)
@@ -121,30 +117,6 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
         //TODO icon_seoulight_modify        -> 서울라이트인 경우에만 보이도록
     }
 
-    // 선택한 이미지 데이터 받기
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode === REQ_CODE_SELECT_IMAGE) {
-            if (resultCode === Activity.RESULT_OK) {
-                try {
-                    //이미지 데이터를 비트맵으로 받아온다.
-                    val image_bitmap = Images.Media.getBitmap(contentResolver, data!!.getData())
-                    val image = findViewById(R.id.iv_profile_modify) as ImageView
-
-                    //배치해놓은 ImageView에 set
-                    image.setImageBitmap(image_bitmap)
-                } catch (e: FileNotFoundException) {
-                    e.printStackTrace()
-                } catch (e: IOException) {
-                    e.printStackTrace()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-
-            }
-        }
-    }
-
     // 토스트 띄우기
     fun openToast(toastView : RelativeLayout) {
         val toast = Toast(baseContext)
@@ -157,7 +129,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
     fun putPassword() {
         password = PasswordData(et_password1_modify.text.toString())
 
-        var passwordResponse = networkService.putPassword(
+        val passwordResponse = networkService.putPassword(
                 SharedPreference.instance!!.getPrefStringData("token")!!, password
         )
 
@@ -179,5 +151,36 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         })
+    }
+
+    // 갤러리 불러오기
+    fun changeImg() {
+        var intent = Intent(Intent.ACTION_PICK)
+        intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE)
+        intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        startActivityForResult(intent, REQ_CODE_SELECT_IMAGE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode === REQ_CODE_SELECT_IMAGE) {
+            if (resultCode === Activity.RESULT_OK) {
+                try {
+                    //이미지 데이터를 비트맵으로 받아온다.
+                    val image_bitmap = Images.Media.getBitmap(contentResolver, data!!.getData())
+                    val image = findViewById(R.id.iv_profile_modify) as ImageView
+
+                    //배치해놓은 ImageView에 set
+                    image.setImageBitmap(image_bitmap)
+                } catch (e: FileNotFoundException) {
+                    e.printStackTrace()
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+            }
+        }
     }
 }

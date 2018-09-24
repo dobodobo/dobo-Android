@@ -34,7 +34,7 @@
             android:layout_centerInParent="true"
             android:src="#79C8C6"/>
         <ImageButton
-            android:id="@+id/btn_changephoto_modify"
+            android:id="@+id/btn_changeimg_modify"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_alignBottom="@+id/iv_profile_modify"

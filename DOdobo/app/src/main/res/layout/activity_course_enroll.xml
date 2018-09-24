@@ -349,6 +349,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"></Spinner>
                     <EditText
+                        android:id="@+id/et_coursename_courseenroll"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"

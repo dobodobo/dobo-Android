@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.hyeran.android.dodobo.ApplicationController
 import com.hyeran.android.dodobo.MainActivity
 import com.hyeran.android.dodobo.Model.SignIn.SignInResponse
@@ -55,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
             override fun onFailure(call: Call<SignInResponse>?, t: Throwable?) {
                 Log.v("login 실패",t!!.message.toString())
                 et_password_login.setBackgroundResource(R.drawable.login_textbox_error)
-                //TODO: 로그인 실패 팝업 띄우기
+                Toast.makeText(this@LoginActivity, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
             }
 
             override fun onResponse(call: Call<SignInResponse>?, response: Response<SignInResponse>?) {
@@ -79,6 +80,7 @@ class LoginActivity : AppCompatActivity() {
 
                 } else {
                     et_password_login.setBackgroundResource(R.drawable.login_textbox_error)
+                    Toast.makeText(this@LoginActivity, "아이디와 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
                 }
 
             }

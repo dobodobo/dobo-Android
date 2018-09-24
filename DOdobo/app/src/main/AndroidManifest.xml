@@ -22,13 +22,15 @@
         <activity android:name=".mypage.ApplySeoulightActivity" />
         <activity android:name=".recommend.SeoulightDetailActivity" />
         <activity android:name=".dobo.DoboDetailActivity" />
-        <activity android:name=".login.LoginActivity" >
+        <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".recommend.CourseEnroll" />
         <activity android:name=".join.JoinActivity" />
     </application>
+
 </manifest>
