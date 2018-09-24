@@ -4,9 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
+import com.hyeran.android.dodobo.dobo.DoboCategory
 import com.hyeran.android.dodobo.dobo.Dobolist
 import com.hyeran.android.dodobo.home.HomeTab
-import com.hyeran.android.dodobo.home.Category
+import com.hyeran.android.dodobo.home.SeoulightCategory
 import com.hyeran.android.dodobo.mypage.MypageTab
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,13 +27,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 clearSelected()
                 btn_dobo_main.isSelected = true
                 btn_dobo_main.setImageResource(R.drawable.ic_dobo_p)
-                replaceFragment(Dobolist())
+                replaceFragment(DoboCategory())
             }
             btn_recommend_main -> {
                 clearSelected()
                 btn_recommend_main.isSelected = true
                 btn_recommend_main.setImageResource(R.drawable.ic_recommend_p)
-                replaceFragment(Category())
+                replaceFragment(SeoulightCategory())
             }
             btn_mypage_main -> {
                 clearSelected()
