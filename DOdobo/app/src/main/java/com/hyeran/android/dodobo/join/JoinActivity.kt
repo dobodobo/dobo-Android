@@ -27,7 +27,7 @@ class JoinActivity : AppCompatActivity() {
             startActivityForResult(intent, REQ_CODE_SELECT_IMAGE)
         }
         btn_finish_join.setOnClickListener{
-            var intent = Intent(applicationContext, LoginActivity::class.java)
+            var intent = Intent(baseContext, LoginActivity::class.java)
             startActivity(intent)
         }
     }

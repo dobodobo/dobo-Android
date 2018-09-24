@@ -68,16 +68,35 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아이디"
+                android:text="이름"
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="14sp"
                 android:textColor="#000000"/>
 
             <EditText
+                android:id="@+id/et_name_jogin"
+                android:layout_width="249dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/login_textbox"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:hint="이름을 입력해주세요"
+                android:paddingLeft="30dp"
+                android:textColorHint="#949494"
+                android:textSize="14sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="아이디"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                android:textColor="#000000"/>
+            <EditText
                 android:id="@+id/et_email_jogin"
                 android:layout_width="249dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/login_textbox"
                 android:fontFamily="@font/nanumsquare_regular"
                 android:hint="email@email.com"
@@ -89,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="14sp"
                 android:textColor="#000000"/>
@@ -97,7 +116,7 @@
                 android:id="@+id/et_password_jogin"
                 android:layout_width="249dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/login_textbox"
                 android:paddingLeft="30dp"
                 android:inputType="textPassword"
@@ -107,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호 확인"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="14sp"
                 android:textColor="#000000"/>
@@ -115,7 +134,7 @@
                 android:id="@+id/et_passwordcheck_jogin"
                 android:layout_width="249dp"
                 android:layout_height="35dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="6dp"
                 android:background="@drawable/login_textbox"
                 android:paddingLeft="30dp"
                 android:inputType="textPassword"
@@ -123,10 +142,10 @@
                 />
             <ImageButton
                 android:id="@+id/btn_finish_join"
-                android:layout_marginTop="42dp"
+                android:layout_marginTop="15dp"
                 android:layout_width="120dp"
                 android:layout_height="35dp"
-                android:src="@drawable/finish_btn_blank"
+                android:src="@drawable/complete_btn_blank"
                 android:background="#ffffff"
                 android:layout_gravity="center_horizontal"
                 />

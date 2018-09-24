@@ -1,4 +1,4 @@
-package com.hyeran.android.dodobo.mypage
+package com.hyeran.android.dodobo.recyclerview.mypagelist
 
 import android.support.v7.widget.RecyclerView
 import android.content.Context

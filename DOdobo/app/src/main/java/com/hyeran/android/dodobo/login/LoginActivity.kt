@@ -11,6 +11,7 @@ import com.hyeran.android.dodobo.Model.SignIn.SignInUser
 import com.hyeran.android.dodobo.Network.NetworkService
 import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.Util.SharedPreference
+import com.hyeran.android.dodobo.join.JoinActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,6 +34,11 @@ class LoginActivity : AppCompatActivity() {
 
         btn_signin_login.setOnClickListener {
             postSignIn()
+        }
+
+        btn_signup_login.setOnClickListener {
+            var intent = Intent(baseContext, JoinActivity::class.java)
+            startActivity(intent)
         }
     }
 

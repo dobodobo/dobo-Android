@@ -78,7 +78,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
             btn_applyseoulight_modify -> {
-                val intent = Intent(applicationContext, ApplySeoulightActivity::class.java)
+                val intent = Intent(baseContext, ApplySeoulightActivity::class.java)
                 startActivity(intent)
             }
             btn_complete_modify -> {
@@ -86,9 +86,9 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 // 비밀번호 일치
                 if(et_password1_modify.text.toString() == et_password2_modify.text.toString()) {
                     putPassword()
-                    toastView = View.inflate(applicationContext, R.layout.toast_complete_modify, null) as RelativeLayout
+                    toastView = View.inflate(baseContext, R.layout.toast_complete_modify, null) as RelativeLayout
                 } else {    // 비밀번호 불일치 오류
-                    toastView = View.inflate(applicationContext, R.layout.toast_fail_modify, null) as RelativeLayout
+                    toastView = View.inflate(baseContext, R.layout.toast_fail_modify, null) as RelativeLayout
                 }
                 openToast(toastView)
             }
@@ -147,7 +147,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
     // 토스트 띄우기
     fun openToast(toastView : RelativeLayout) {
-        val toast = Toast(applicationContext)
+        val toast = Toast(baseContext)
         toast.view = toastView
         toast.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
         toast.show()
@@ -181,35 +181,3 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
         })
     }
 }
-
-//feedBack = FeedBackData(et_title_suggestion.text.toString()
-//,et_content_suggestion.text.toString())
-//
-//var suggestResponse = networkService.postFeedBack(
-//        SharedPreference.instance!!.getPrefStringData("token")!!,feedBack)
-//
-//suggestResponse.enqueue(object : Callback<BaseModel> {
-//    override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
-//
-//    }
-//
-//    override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
-//        if(response!!.isSuccessful){
-//
-//            val toastView = View.inflate(applicationContext, R.layout.toast_submit_suggestion, null) as RelativeLayout
-//            val toastComplete = Toast(applicationContext)
-//
-//            toastComplete.view = toastView
-//            toastComplete.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
-//            toastComplete.show()
-//
-//            Log.v("건의사항 성공",response!!.message())
-//            finish()
-//        } else {
-//            //TODO : 디자인에 맞는 팝업 띄우기
-//            Log.e("건의사항 실패",response!!.message())
-//
-//        }
-//    }
-//
-//})

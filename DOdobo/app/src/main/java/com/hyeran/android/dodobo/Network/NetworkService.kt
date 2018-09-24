@@ -13,8 +13,6 @@ import retrofit2.http.*
 
 interface NetworkService {
 
-
-
     // 로그인 - POST
     @POST("users/signin")
     fun postSignIn(
@@ -27,7 +25,6 @@ interface NetworkService {
             @Header("token") token : String,
             @Body passwordData : PasswordData
     ) : Call<BaseModel>
-
 
     // 건의사항 - POST
     @POST("users/feedback")

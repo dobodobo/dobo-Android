@@ -63,8 +63,8 @@ class SuggestionActivity : AppCompatActivity() {
             override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
                 if(response!!.isSuccessful){
 
-                    val toastView = View.inflate(applicationContext, R.layout.toast_submit_suggestion, null) as RelativeLayout
-                    val toastComplete = Toast(applicationContext)
+                    val toastView = View.inflate(baseContext, R.layout.toast_submit_suggestion, null) as RelativeLayout
+                    val toastComplete = Toast(baseContext)
 
                     toastComplete.view = toastView
                     toastComplete.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)

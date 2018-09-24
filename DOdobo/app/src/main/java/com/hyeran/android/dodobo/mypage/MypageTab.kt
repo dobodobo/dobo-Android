@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hyeran.android.dodobo.R
+import com.hyeran.android.dodobo.recyclerview.mypagelist.DobolistAdapter
+import com.hyeran.android.dodobo.recyclerview.mypagelist.DobolistItem
 import kotlinx.android.synthetic.main.fragment_mypage.*
 import kotlinx.android.synthetic.main.fragment_mypage.view.*
 
