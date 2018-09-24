@@ -3,9 +3,9 @@
     package="com.hyeran.android.dodobo">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+
     <application
         android:name=".ApplicationController"
         android:allowBackup="true"
@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".home.InformDoboActivity" />
         <activity android:name=".home.InformSeoulightActivity" />
         <activity android:name=".mypage.SuggestionActivity" />
@@ -29,7 +29,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".recommend.CourseEnroll"></activity>
+        <activity android:name=".recommend.CourseEnroll" />
+        <activity android:name=".join.JoinActivity"></activity>
     </application>
 
 </manifest>

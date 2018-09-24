@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffffff"
     tools:context=".login.LoginActivity">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
             android:layout_height="59dp"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="31dp"
-            android:src="#d8d8d8"/>
+            android:src="@drawable/login_lunchericon_two"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -49,7 +50,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp"
             android:layout_centerInParent="true"
             android:layout_marginHorizontal="55dp">
             <TextView
@@ -59,7 +59,6 @@
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textSize="14sp"
                 android:textColor="#000000"/>
-
             <EditText
                 android:id="@+id/et_email_login"
                 android:layout_width="249dp"

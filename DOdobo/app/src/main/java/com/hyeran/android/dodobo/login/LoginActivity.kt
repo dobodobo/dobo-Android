@@ -33,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
 
         btn_signin_login.setOnClickListener {
             postSignIn()
-
         }
     }
 
@@ -50,6 +49,7 @@ class LoginActivity : AppCompatActivity() {
             override fun onFailure(call: Call<SignInResponse>?, t: Throwable?) {
                 Log.v("login 실패",t!!.message.toString())
                 et_password_login.setBackgroundResource(R.drawable.login_textbox_error)
+                //TODO: 로그인 실패 팝업 띄우기
             }
 
             override fun onResponse(call: Call<SignInResponse>?, response: Response<SignInResponse>?) {
