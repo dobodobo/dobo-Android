@@ -308,29 +308,57 @@
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="#86c9c9c9"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="21dp"
                 android:orientation="horizontal">
-                <TextView
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="1.3"
-                    android:gravity="center"
                     android:layout_height="wrap_content"
-                    android:text="코스"
-                    android:fontFamily="@font/nanumsquare_regular"
-                    android:textSize="14sp"
-                    android:textColor="#434343"/>
-                <EditText
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nanumsquare_regular"
+                        android:gravity="center"
+                        android:text="코스"
+                        android:textColor="#434343"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:text="(최소 2개)"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/nanumsquare_light"
+                        android:textColor="#9b9b9b"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_weight="2"
-                    android:layout_height="wrap_content"
-                    android:hint="코스 이름"
-                    android:fontFamily="@font/nanumsquare_regular"
-                    android:textSize="14sp"
-                    android:textColor="#434343"
-                    android:background="@android:color/transparent"/>
+                    android:layout_height="wrap_content">
+                    <Spinner
+                        android:id="@+id/spinner_course"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></Spinner>
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/nanumsquare_regular"
+                        android:hint="코스 이름"
+                        android:textColor="#434343"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
             </LinearLayout>
             <View
                 android:layout_width="match_parent"
@@ -362,7 +390,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:text="(최대 5장)"
+                        android:text="(최소 2장, 최대 5장)"
                         android:fontFamily="@font/nanumsquare_light"
                         android:textColor="#9b9b9b"
                         android:textSize="12sp"

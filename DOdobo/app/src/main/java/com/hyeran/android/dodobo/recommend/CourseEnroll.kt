@@ -8,7 +8,9 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.ImageView
+import android.widget.Spinner
 import com.hyeran.android.dodobo.R
+import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
 import kotlinx.android.synthetic.main.activity_course_enroll.*
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -16,9 +18,14 @@ import java.io.IOException
 /*
 갤러리에서 이미지 가져오기 참고 링크
 http://ankyu.entersoft.kr/Lecture/android/gallery_01.asp
+스피너 커스텀 이미지뷰 참고 링크
+http://blog.naver.com/PostView.nhn?blogId=newyorkinms&logNo=220760844250&parentCategoryNo=10&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
 */
 
 class CourseEnroll : AppCompatActivity(), View.OnClickListener {
+
+    lateinit var icons : ArrayList<CourseSpinner>
+    lateinit var courseSpinnerAdapter: CourseSpinnerAdapter
 
     var REQ_CODE_SELECT_IMAGE = 100;
 
@@ -91,6 +98,15 @@ class CourseEnroll : AppCompatActivity(), View.OnClickListener {
         btn_activity_courseenroll.setOnClickListener(this)
         btn_etc_courseenroll.setOnClickListener(this)
         btn_addphoto_courseenroll.setOnClickListener(this)
+
+        icons = ArrayList()
+        icons.add(CourseSpinner(R.drawable.ic_see_course))
+        icons.add(CourseSpinner(R.drawable.ic_eat_course))
+
+        courseSpinnerAdapter = CourseSpinnerAdapter(applicationContext, icons)
+        var spinner : Spinner = findViewById(R.id.spinner_course)
+        spinner.adapter = courseSpinnerAdapter
+
     }
 
     // 선택한 이미지 데이터 받기
