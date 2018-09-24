@@ -12,9 +12,18 @@ import kotlinx.android.synthetic.main.activity_modify.*
 import android.widget.RelativeLayout
 import android.provider.MediaStore.Images
 import android.app.Activity
+import android.util.Log
 import android.widget.ImageView
+import com.hyeran.android.dodobo.ApplicationController
+import com.hyeran.android.dodobo.Model.BaseModel
+import com.hyeran.android.dodobo.Model.MyPage.PasswordData
+import com.hyeran.android.dodobo.Network.NetworkService
+import com.hyeran.android.dodobo.Util.SharedPreference
+import retrofit2.Call
+import retrofit2.Response
 import java.io.FileNotFoundException
 import java.io.IOException
+import javax.security.auth.callback.Callback
 
 /*
 갤러리에서 이미지 가져오기 참고 링크
@@ -22,6 +31,9 @@ http://ankyu.entersoft.kr/Lecture/android/gallery_01.asp
 */
 
 class ModifyActivity : AppCompatActivity(), View.OnClickListener {
+
+    lateinit var networkService: NetworkService
+    lateinit var password: PasswordData
 
     // 비밀번호 보이기 아이콘 Pressed 상태(0-Unpressed, 1-Pressed)
     var status1 = 0
@@ -73,6 +85,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 lateinit var toastView : RelativeLayout
                 // 비밀번호 일치
                 if(et_password1_modify.text.toString() == et_password2_modify.text.toString()) {
+                    putPassword()
                     toastView = View.inflate(applicationContext, R.layout.toast_complete_modify, null) as RelativeLayout
                 } else {    // 비밀번호 불일치 오류
                     toastView = View.inflate(applicationContext, R.layout.toast_fail_modify, null) as RelativeLayout
@@ -85,6 +98,9 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modify)
+
+        networkService = ApplicationController.instance!!.networkService
+        SharedPreference.instance!!.load(this)
 
         // 클릭 리스너 등록
         btn_back_modify.setOnClickListener(this)
@@ -136,4 +152,64 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
         toast.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
         toast.show()
     }
+
+    // 비밀번호 수정 - PUT
+    fun putPassword() {
+        password = PasswordData(et_password1_modify.text.toString())
+
+        var passwordResponse = networkService.putPassword(
+                SharedPreference.instance!!.getPrefStringData("token")!!, password
+        )
+
+        passwordResponse.enqueue(object : retrofit2.Callback<BaseModel> {
+            override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
+
+            }
+
+            override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
+                if (response!!.isSuccessful) {
+
+                    Log.v("비밀번호 수정 성공", response!!.message())
+                    finish()
+                } else {
+                    //TODO : 디자인에 맞는 팝업 띄우기
+                    Log.e("비밀번호 수정 실패", response!!.message())
+
+                }
+            }
+
+        })
+    }
 }
+
+//feedBack = FeedBackData(et_title_suggestion.text.toString()
+//,et_content_suggestion.text.toString())
+//
+//var suggestResponse = networkService.postFeedBack(
+//        SharedPreference.instance!!.getPrefStringData("token")!!,feedBack)
+//
+//suggestResponse.enqueue(object : Callback<BaseModel> {
+//    override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
+//
+//    }
+//
+//    override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
+//        if(response!!.isSuccessful){
+//
+//            val toastView = View.inflate(applicationContext, R.layout.toast_submit_suggestion, null) as RelativeLayout
+//            val toastComplete = Toast(applicationContext)
+//
+//            toastComplete.view = toastView
+//            toastComplete.setGravity(Gravity.CENTER, 0, 0)  // 중앙으로 위치 이동(첫번째 인자를 중심으로 xOffset, yOffset 떨어진 곳)
+//            toastComplete.show()
+//
+//            Log.v("건의사항 성공",response!!.message())
+//            finish()
+//        } else {
+//            //TODO : 디자인에 맞는 팝업 띄우기
+//            Log.e("건의사항 실패",response!!.message())
+//
+//        }
+//    }
+//
+//})
