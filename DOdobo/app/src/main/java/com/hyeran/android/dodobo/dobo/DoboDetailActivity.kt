@@ -2,8 +2,10 @@ package com.hyeran.android.dodobo.dobo
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.view.ViewPager
 import android.support.v7.widget.LinearLayoutManager
 import com.hyeran.android.dodobo.AddReviewDialog
+import com.hyeran.android.dodobo.ImgSlideAdapter
 import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
 import com.hyeran.android.dodobo.recyclerview.course.CourseItem
 import com.hyeran.android.dodobo.recyclerview.review.ReviewAdapter
@@ -12,8 +14,23 @@ import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.recyclerview.surrounding.SurroundingAdapter
 import com.hyeran.android.dodobo.recyclerview.surrounding.SurroundingItem
 import kotlinx.android.synthetic.main.activity_dobo_detail.*
+import android.support.v4.view.ViewPager.OnPageChangeListener
+import android.widget.Toast
 
+
+/*
+이미지 슬라이더 참고 링크
+http://debuglog.tistory.com/63
+
+뷰페이저 넘어갈때 마다 이벤트 정의 참고 링크
+https://code.i-harness.com/ko-kr/q/142863a
+ */
 class DoboDetailActivity : AppCompatActivity() {
+
+    // 이미지 슬라이더 사용 변수
+    lateinit var imgSlideAdapter : ImgSlideAdapter
+    lateinit var viewPager : ViewPager
+//    lateinit var pageChangeListener : ViewPager.OnPageChangeListener
 
     lateinit var courseItems : ArrayList<CourseItem>
     lateinit var courseAdapter : CourseAdapter
@@ -27,6 +44,28 @@ class DoboDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dobo_detail)
+
+        // 이미지 슬라이더
+        viewPager = findViewById(R.id.vp_img_dobodetail)
+        imgSlideAdapter = ImgSlideAdapter(this)
+        viewPager.adapter = imgSlideAdapter
+
+//        // 뷰페이저 넘어갈때 마다 이벤트 정의
+//        pageChangeListener = object : OnPageChangeListener {
+//
+//            override fun onPageSelected(position: Int) {
+//                iv_dot1_dobodetail.setImageResource(R.drawable.oval_2_copy)
+//                iv_dot1_dobodetail.setImageResource(R.drawable.oval_2)
+//            }
+//
+//            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+//            override fun onPageScrollStateChanged(state: Int) {}
+//        }
+
+//        viewPager.addOnPageChangeListener(pageChangeListener)
+
+
+
         btn_back_dobodetail.setOnClickListener {
             finish()
         }
@@ -74,4 +113,6 @@ class DoboDetailActivity : AppCompatActivity() {
         rv_review_dobodetail.layoutManager = LinearLayoutManager(this)
         rv_review_dobodetail.adapter = reviewAdapter
     }
+
+
 }

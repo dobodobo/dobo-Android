@@ -3,8 +3,10 @@ package com.hyeran.android.dodobo.recommend
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.view.ViewPager
 import android.support.v7.widget.LinearLayoutManager
 import com.hyeran.android.dodobo.AddReviewDialog
+import com.hyeran.android.dodobo.ImgSlideAdapter
 import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
 import com.hyeran.android.dodobo.recyclerview.course.CourseItem
@@ -13,8 +15,18 @@ import com.hyeran.android.dodobo.recyclerview.language.LanguageItem
 import com.hyeran.android.dodobo.recyclerview.review.ReviewAdapter
 import com.hyeran.android.dodobo.recyclerview.review.ReviewItem
 import kotlinx.android.synthetic.main.activity_seoulight_detail.*
+/*
+이미지 슬라이더 참고 링크
+http://debuglog.tistory.com/63
 
+이메일 연결 참고 링크
+http://purplecowd.tistory.com/entry/android-email-%EB%B3%B4%EB%82%B4%EA%B8%B0-%ED%8C%8C%EC%9D%BC%EC%B2%A8%EB%B6%80-%ED%8F%AC%ED%95%A8
+ */
 class SeoulightDetailActivity : AppCompatActivity(){
+
+    // 이미지 슬라이더 사용 변수
+    lateinit var imgSliderAdapter : ImgSlideAdapter
+    lateinit var viewPager : ViewPager
 
     lateinit var  languageItems : ArrayList<LanguageItem>
     lateinit var languageAdapter : LanguageAdapter
@@ -28,13 +40,19 @@ class SeoulightDetailActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seoulight_detail)
+
+        // 이미지 슬라이더
+        viewPager = findViewById(R.id.vp_img_seoulightdetail)
+        imgSliderAdapter = ImgSlideAdapter(this)
+        viewPager.adapter = imgSliderAdapter
+
         btn_back_seoulightdetail.setOnClickListener {
             finish()
         }
         btn_addreview_seoulight.setOnClickListener {
             AddReviewDialog(this).show()
         }
-        // 이메일 연결
+        // 이메일 보내기
         btn_ask_seoulight.setOnClickListener {
             var intent = Intent(Intent.ACTION_SEND)
             intent.setType("plain/text")

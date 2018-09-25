@@ -18,10 +18,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp">
-                <ImageView
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_img_seoulightdetail"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:src="@android:color/holo_orange_light"/>
+                    android:background="@android:color/holo_orange_light"
+                    />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -18,10 +18,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp">
-                <ImageView
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_img_dobodetail"
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:src="@android:color/holo_orange_light"/>
+                    android:background="@android:color/holo_orange_light"
+                    />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -30,26 +32,31 @@
                     android:layout_marginBottom="12dp"
                     android:layout_centerHorizontal="true">
                     <ImageView
+                        android:id="@+id/iv_dot1_dobodetail"
                         android:layout_width="7dp"
                         android:layout_height="7dp"
                         android:src="@drawable/oval_2"
                         android:layout_marginRight="8dp"/>
                     <ImageView
+                        android:id="@+id/iv_dot2_dobodetail"
                         android:layout_width="7dp"
                         android:layout_height="7dp"
                         android:src="@drawable/oval_2_copy"
                         android:layout_marginRight="8dp"/>
                     <ImageView
+                        android:id="@+id/iv_dot3_dobodetail"
                         android:layout_width="7dp"
                         android:layout_height="7dp"
                         android:src="@drawable/oval_2_copy"
                         android:layout_marginRight="8dp"/>
                     <ImageView
+                        android:id="@+id/iv_dot4_dobodetail"
                         android:layout_width="7dp"
                         android:layout_height="7dp"
                         android:src="@drawable/oval_2_copy"
                         android:layout_marginRight="8dp"/>
                     <ImageView
+                        android:id="@+id/iv_dot5_dobodetail"
                         android:layout_width="7dp"
                         android:layout_height="7dp"
                         android:src="@drawable/oval_2_copy"/>
