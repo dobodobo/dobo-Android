@@ -1,5 +1,6 @@
 package com.hyeran.android.dodobo.recommend
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -32,6 +33,14 @@ class SeoulightDetailActivity : AppCompatActivity(){
         }
         btn_addreview_seoulight.setOnClickListener {
             AddReviewDialog(this).show()
+        }
+        // 이메일 연결
+        btn_ask_seoulight.setOnClickListener {
+            var intent = Intent(Intent.ACTION_SEND)
+            intent.setType("plain/text")
+            var address: Array<String> = arrayOf("*통신* 해설사 이메일 주소 넣기")
+            intent.putExtra(Intent.EXTRA_EMAIL, address)
+            startActivity(intent)
         }
 
         // 언어 리사이클러뷰
