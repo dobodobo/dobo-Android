@@ -26,6 +26,13 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"></RelativeLayout>
         </LinearLayout>
+        <ImageButton
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/group_3"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="22dp"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -41,7 +48,7 @@
                 android:layout_width="105dp"
                 android:layout_height="105dp"
                 android:layout_centerInParent="true"
-                android:src="#c9c9c9"/>
+                android:src="@drawable/group_8"/>
             <ImageButton
                 android:id="@+id/btn_changephoto_join"
                 android:layout_width="45dp"
@@ -145,7 +152,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_width="120dp"
                 android:layout_height="35dp"
-                android:src="@drawable/complete_btn_blank"
+                android:src="@drawable/complete_btn_fill"
                 android:background="#ffffff"
                 android:layout_gravity="center_horizontal"
                 />

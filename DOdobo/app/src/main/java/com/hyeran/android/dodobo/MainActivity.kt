@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.View
 import com.hyeran.android.dodobo.dobo.DoboCategory
-import com.hyeran.android.dodobo.dobo.Dobolist
 import com.hyeran.android.dodobo.home.HomeTab
 import com.hyeran.android.dodobo.home.SeoulightCategory
 import com.hyeran.android.dodobo.mypage.MypageTab
@@ -14,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     val bundle = Bundle()
+
 
     override fun onClick(v: View?) {
         when(v){
@@ -55,6 +55,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         btn_mypage_main.setOnClickListener(this)
 
         //TODO viewpager 추가
+
+
+
     }
 
     fun addFragment(fragment: Fragment) {

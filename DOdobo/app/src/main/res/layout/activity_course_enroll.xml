@@ -416,6 +416,10 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="49dp"
                     android:layout_marginBottom="18dp"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_image_courseenroll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
                 <ImageView
                     android:id="@+id/iv_photo_courseenroll"
                     android:layout_width="91dp"
@@ -426,7 +430,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="57dp"
-                android:background="#d8d8d8">
+                android:background="#79c8c6">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

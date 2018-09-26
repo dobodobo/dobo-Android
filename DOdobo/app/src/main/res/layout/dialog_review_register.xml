@@ -36,6 +36,6 @@
         android:layout_height="27dp"
         android:layout_marginTop="19dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/finish_btn_blank"
+        android:src="@drawable/finish_btn_fill"
         android:background="@android:color/transparent"/>
 </LinearLayout>

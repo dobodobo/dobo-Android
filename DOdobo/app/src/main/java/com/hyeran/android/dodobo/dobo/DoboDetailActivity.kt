@@ -14,9 +14,6 @@ import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.recyclerview.surrounding.SurroundingAdapter
 import com.hyeran.android.dodobo.recyclerview.surrounding.SurroundingItem
 import kotlinx.android.synthetic.main.activity_dobo_detail.*
-import android.support.v4.view.ViewPager.OnPageChangeListener
-import android.widget.Toast
-
 
 /*
 이미지 슬라이더 참고 링크
