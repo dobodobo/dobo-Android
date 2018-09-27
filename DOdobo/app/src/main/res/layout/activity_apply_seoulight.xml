@@ -57,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3">
                 <EditText
-                    android:id="@+id/et_name"
+                    android:id="@+id/et_name_seoulightregister"
                     android:layout_width="170dp"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/nanumsquare_regular"
@@ -114,6 +114,7 @@
                     android:src="@drawable/star_2"/>
             </RelativeLayout>
             <EditText
+                android:id="@+id/et_birth_seoulightregister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/nanumsquare_regular"
@@ -152,6 +153,7 @@
                     android:src="@drawable/star_2"/>
             </RelativeLayout>
             <EditText
+                android:id="@+id/et_organization_seoulightregister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
@@ -191,6 +193,7 @@
                     android:src="@drawable/star_2"/>
             </RelativeLayout>
             <EditText
+                android:id="@+id/et_portpolio_seoulightregister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
@@ -230,6 +233,7 @@
                     android:src="@drawable/star_2"/>
             </RelativeLayout>
             <EditText
+                android:id="@+id/et_phone_seoulightregister"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
@@ -261,6 +265,7 @@
             android:textColor="#434343"
             android:layout_gravity="center_vertical"/>
         <EditText
+            android:id="@+id/et_intro_seoulightregister"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="45dp"
