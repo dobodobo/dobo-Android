@@ -23,7 +23,7 @@ http://ankyu.entersoft.kr/Lecture/android/gallery_01.asp
 http://blog.naver.com/PostView.nhn?blogId=newyorkinms&logNo=220760844250&parentCategoryNo=10&categoryNo=&viewDate=&isShowPopularPosts=true&from=search
 */
 
-class CourseEnroll : AppCompatActivity(), View.OnClickListener {
+class CourseEnrollActivity : AppCompatActivity(), View.OnClickListener {
 
     lateinit var icons : ArrayList<CourseSpinner>
     lateinit var courseSpinnerAdapter: CourseSpinnerAdapter
@@ -84,6 +84,9 @@ class CourseEnroll : AppCompatActivity(), View.OnClickListener {
                 intent.setData(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                 startActivityForResult(intent, REQ_CODE_SELECT_IMAGE)
             }
+            et_coursename_courseenroll -> {
+//                var intent = Intent(PlaceAutocomplete.IntentBuilder(PlaceAutocomplete))
+            }
         }
     }
 
@@ -99,6 +102,7 @@ class CourseEnroll : AppCompatActivity(), View.OnClickListener {
         btn_activity_courseenroll.setOnClickListener(this)
         btn_etc_courseenroll.setOnClickListener(this)
         btn_addphoto_courseenroll.setOnClickListener(this)
+        et_coursename_courseenroll.setOnClickListener(this)
 
         icons = ArrayList()
         icons.add(CourseSpinner(R.drawable.ic_see_course))

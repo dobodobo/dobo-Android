@@ -29,7 +29,7 @@ class SeoulightlistAdapter(private var seoulightlistItems: ArrayList<Seoulightli
         holder.seoulightTitle.text = seoulightlistItems[position].title
         holder.seoulightLanguage.text = seoulightlistItems[position].language
         holder.seoulightDate.text = seoulightlistItems[position].date
-        holder.seoulightMinPeople.setText(seoulightlistItems[position].minpeople)
-        holder.seoulightMaxPeople.setText(seoulightlistItems[position].maxpeople)
+        holder.seoulightMinPeople.text = seoulightlistItems[position].minpeople.toString()
+        holder.seoulightMaxPeople.text = seoulightlistItems[position].maxpeople.toString()
     }
 }

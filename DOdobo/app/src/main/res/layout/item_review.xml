@@ -44,6 +44,7 @@
         android:textSize="12sp"
         android:textColor="#434343"/>
     <ImageButton
+        android:id="@+id/btn_notify_review"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:background="@android:color/transparent"

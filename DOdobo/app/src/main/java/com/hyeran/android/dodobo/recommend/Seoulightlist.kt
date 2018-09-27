@@ -61,7 +61,7 @@ class Seoulightlist : Fragment(), View.OnClickListener {
         }
 
         v.btn_enroll_seoulight.setOnClickListener {
-            val intent = Intent(context, CourseEnroll::class.java)
+            val intent = Intent(context, CourseEnrollActivity::class.java)
             startActivity(intent)
         }
 
