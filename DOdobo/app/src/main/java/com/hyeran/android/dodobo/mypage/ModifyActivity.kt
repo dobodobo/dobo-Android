@@ -12,13 +12,20 @@ import kotlinx.android.synthetic.main.activity_modify.*
 import android.widget.RelativeLayout
 import android.provider.MediaStore.Images
 import android.app.Activity
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.util.Log
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.hyeran.android.dodobo.ApplicationController
 import com.hyeran.android.dodobo.Model.BaseModel
 import com.hyeran.android.dodobo.Model.MyPage.PasswordData
 import com.hyeran.android.dodobo.Network.NetworkService
 import com.hyeran.android.dodobo.Util.SharedPreference
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
 import java.io.*
@@ -40,6 +47,9 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
     var inputTypeInvisible = 0
 
     var REQ_CODE_SELECT_IMAGE = 100
+    lateinit var data : Uri
+    private var image : MultipartBody.Part? = null
+
 
     override fun onClick(v: View?) {
         when(v) {
@@ -80,6 +90,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
                 // 비밀번호 일치
                 if(et_password1_modify.text.toString() == et_password2_modify.text.toString()) {
                     putPassword()
+                    putImage()
                     Toast.makeText(this, "프로필이 수정되었습니다.", Toast.LENGTH_SHORT).show()
                     //toastView = View.inflate(baseContext, R.layout.toast_complete_modify, null) as RelativeLayout
                 } else {    // 비밀번호 불일치 오류
@@ -166,16 +177,37 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
         if (requestCode === REQ_CODE_SELECT_IMAGE) {
             if (resultCode === Activity.RESULT_OK) {
                 try {
-                    //이미지 데이터를 비트맵으로 받아온다.
-                    val image_bitmap = Images.Media.getBitmap(contentResolver, data!!.getData())
-                    val image = findViewById(R.id.iv_profile_modify) as ImageView
+                    this.data = data!!.data // 이미지의 uri 가져옴
+                    Log.v("이미지", this.data.toString())
 
-                    //배치해놓은 ImageView에 set
-                    image.setImageBitmap(image_bitmap)
-                } catch (e: FileNotFoundException) {
-                    e.printStackTrace()
-                } catch (e: IOException) {
-                    e.printStackTrace()
+                    val options = BitmapFactory.Options()
+
+                    var input : InputStream? = null
+                    try {
+                        input = contentResolver.openInputStream(this.data)
+                    } catch (e : FileNotFoundException) {
+                        e.printStackTrace()
+                    }
+                    val bitmap = BitmapFactory.decodeStream(input, null, options) // InputStream 으로부터 Bitmap 을 만들어 준다.
+                    val baos = ByteArrayOutputStream()//이미지 생성
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 20, baos)//jpeg형태로 적당히 압축
+                    val photoBody = RequestBody.create(MediaType.parse("image/jpg"), baos.toByteArray())
+                    val photo = File(this.data.toString()) // 가져온 파일의 이름을 알아내려고 사용합니다
+
+                    ///RequestBody photoBody = RequestBody.create(MediaType.parse("image/jpg"), baos.toByteArray());
+                    // MultipartBody.Part 실제 파일의 이름을 보내기 위해 사용!!
+
+                    image = MultipartBody.Part.createFormData("photo", photo.name, photoBody)
+                    //포스트멘에서 보낸 키값이랑 name이랑 같아야 한다.
+
+                    //body = MultipartBody.Part.createFormData("image", photo.getName(), profile_pic);
+
+                    //만들었던 이미지 뷰에 이미지를 띄우기 위해서
+                    Glide.with(this)
+                            .load(data.data)
+                            .centerCrop()
+                            .into(iv_profile_modify)
+
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -183,4 +215,41 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
+
+    fun putImage() {
+        val putImageResponse = networkService.putProfileImage(SharedPreference.instance!!.getPrefStringData("token")!!, image)
+
+        putImageResponse.enqueue(object : retrofit2.Callback<BaseModel> {
+            override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
+
+            }
+
+            override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
+                if (response!!.isSuccessful) {
+                    Log.v("프로필 사진 수정 성공", response!!.message())
+                    Toast.makeText(applicationContext, "프로필 사진 수정 성공", Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e("프로필 사진 수정 실패",response!!.message())
+                    Toast.makeText(applicationContext, "프로필 사진 수정 실패", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+        })
+    }
+//        val content = RequestBody.create(MediaType.parse("text/plain"), write_content_tv.text.toString())
+//        val id = RequestBody.create(MediaType.parse("text/plain"), "nuri")
+//        val postBoardResponse = networkService.postBoard(image,title,content,id)
+//        postBoardResponse.enqueue(object : retrofit2.Callback<PostBoardResponse>{
+//            override fun onFailure(call: Call<PostBoardResponse>?, t: Throwable?) {
+//
+//            }
+//
+//            override fun onResponse(call: Call<PostBoardResponse>?, response: Response<PostBoardResponse>?) {
+//                if(response!!.isSuccessful){
+//                    startActivity(Intent(applicationContext, MainActivity::class.java))
+//                    finish()
+//                }
+//            }
+//
+//        })
 }
