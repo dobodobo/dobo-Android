@@ -59,4 +59,8 @@ interface NetworkService {
     fun getMypage(
             @Header("token") token: String
     ): Call<MypageResponse>
+
+
+    //예은
+    
 }
