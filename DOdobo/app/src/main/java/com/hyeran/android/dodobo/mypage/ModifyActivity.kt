@@ -117,6 +117,9 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
         btn_applyseoulight_modify.setOnClickListener(this)
         btn_complete_modify.setOnClickListener(this)
 
+        tv_name_modify.text = intent.getStringExtra("nick")
+        tv_email_modify.text = intent.getStringExtra("email")
+
         // EditText 커서 위치 끝으로 이동
         et_password1_modify.setSelection(et_password1_modify.text.length)
         et_password2_modify.setSelection(et_password2_modify.text.length)

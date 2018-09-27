@@ -28,6 +28,8 @@ class MypageTab : Fragment(), View.OnClickListener {
     프래그먼트 리사이클러뷰 오류 해결 참고 링크
     https://stackoverflow.com/questions/48620115/kotlin-recyclerview-gave-me-null-pointer-exception
      */
+    lateinit var intent : Intent
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,6 +50,7 @@ class MypageTab : Fragment(), View.OnClickListener {
             }
 
         })
+
 
         dobolistItems = ArrayList()
         dobolistItems.add(DobolistItem(R.drawable.home, "양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"))
@@ -73,15 +76,20 @@ class MypageTab : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v) {
             btn_modify_mypage -> {
-                val intent = Intent(context, ModifyActivity::class.java)
+                intent = Intent(context, ModifyActivity::class.java)
+
+                // 인텐트 간 데이터 전달
+                intent.putExtra("nick", tv_name_mypage.text)
+                intent.putExtra("email", tv_email_mypage.text)
+
                 startActivity(intent)
             }
             btn_applyseoulight_mypage -> {
-                val intent = Intent(context, ApplySeoulightActivity::class.java)
+                intent = Intent(context, ApplySeoulightActivity::class.java)
                 startActivity(intent)
             }
             btn_suggestion_mypage -> {
-                val intent = Intent(context, SuggestionActivity::class.java)
+                intent = Intent(context, SuggestionActivity::class.java)
                 startActivity(intent)
             }
         }

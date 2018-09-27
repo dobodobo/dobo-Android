@@ -8,7 +8,6 @@ import com.hyeran.android.dodobo.Model.MyPage.SeoulightRegisterData
 import com.hyeran.android.dodobo.Model.SignIn.SignInResponse
 import com.hyeran.android.dodobo.Model.SignIn.SignInUser
 import com.hyeran.android.dodobo.Model.SignUp.SignUpUser
-import com.hyeran.android.dodobo.Model.dobo.DoboListResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*

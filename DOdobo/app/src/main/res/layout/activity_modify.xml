@@ -61,14 +61,14 @@
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/icon_seoulight_modify"
-                android:layout_alignBottom="@+id/tv_name_modify"
+                android:layout_alignBottom="@+id/tv_name"
                 android:layout_width="86dp"
                 android:layout_height="46dp"
                 android:layout_centerHorizontal="true"
                 android:src="@drawable/ic_commentator"
                 android:paddingRight="40dp"/>
             <TextView
-                android:id="@+id/tv_name_modify"
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_height="wrap_content"
@@ -79,6 +79,7 @@
                 android:gravity="center"/>
         </RelativeLayout>
         <TextView
+            android:id="@+id/tv_name_modify"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent"
@@ -105,6 +106,7 @@
             android:fontFamily="@font/nanumsquare_regular"
             android:gravity="center"/>
         <TextView
+            android:id="@+id/tv_email_modify"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="match_parent"
