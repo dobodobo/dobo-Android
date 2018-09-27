@@ -5,5 +5,6 @@ data class SeoulightlistItem (
     var title : String,
     var language: String,
     var date : String,
-    var people : String
+    var minpeople : Int,
+    var maxpeople : Int
 )

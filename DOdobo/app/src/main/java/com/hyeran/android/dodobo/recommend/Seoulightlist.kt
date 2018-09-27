@@ -28,16 +28,17 @@ class Seoulightlist : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         seoulightlistItems = ArrayList()
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
-        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", "3-5 명"))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
+        seoulightlistItems.add(SeoulightlistItem(R.drawable.home, "여기는 타이틀", "일본어", "2018.09.22", 3, 5))
 
 
         var rv_seoulightlist = view!!.findViewById<View>(R.id.rv_seoulightlist_recommend) as RecyclerView

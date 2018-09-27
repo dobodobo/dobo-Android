@@ -66,7 +66,7 @@
                 android:layout_marginLeft="17dp"
                 android:layout_gravity="center_vertical"/>
             <TextView
-                android:id="@+id/tv_people_seoulight"
+                android:id="@+id/tv_minpeople_seoulight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dp"
@@ -74,7 +74,35 @@
                 android:fontFamily="@font/nanumsquare_regular"
                 android:textColor="#434343"
                 android:layout_gravity="center_vertical"
-                android:text="3-5 명"/>
+                android:text="3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:textColor="#434343"
+                android:layout_gravity="center_vertical"
+                android:text="-"/>
+            <TextView
+                android:id="@+id/tv_maxpeople_seoulight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:textColor="#434343"
+                android:layout_gravity="center_vertical"
+                android:text="5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="1dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/nanumsquare_regular"
+                android:textColor="#434343"
+                android:layout_gravity="center_vertical"
+                android:text="명"/>
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

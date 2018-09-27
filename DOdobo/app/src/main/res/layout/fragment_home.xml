@@ -146,7 +146,28 @@
                 android:layout_height="wrap_content"
                 android:textColor="#585858"
                 android:textSize="8sp"
-                android:text="10명"
+                android:text="3"
+                android:fontFamily="@font/nanumsquare_regular"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#585858"
+                android:textSize="8sp"
+                android:text="-"
+                android:fontFamily="@font/nanumsquare_regular"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#585858"
+                android:textSize="8sp"
+                android:text="5"
+                android:fontFamily="@font/nanumsquare_regular"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#585858"
+                android:textSize="8sp"
+                android:text="명"
                 android:fontFamily="@font/nanumsquare_regular"/>
         </LinearLayout>
     </RelativeLayout>
