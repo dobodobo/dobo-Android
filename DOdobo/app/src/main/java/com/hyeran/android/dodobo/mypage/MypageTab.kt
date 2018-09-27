@@ -1,6 +1,7 @@
 package com.hyeran.android.dodobo.mypage
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -8,11 +9,19 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.RequestManager
+import com.hyeran.android.dodobo.ApplicationController
+import com.hyeran.android.dodobo.Model.MyPage.MypageResponse
+import com.hyeran.android.dodobo.Network.NetworkService
 import com.hyeran.android.dodobo.R
+import com.hyeran.android.dodobo.Util.SharedPreference
 import com.hyeran.android.dodobo.recyclerview.mypagelist.DobolistAdapter
 import com.hyeran.android.dodobo.recyclerview.mypagelist.DobolistItem
 import kotlinx.android.synthetic.main.fragment_mypage.*
 import kotlinx.android.synthetic.main.fragment_mypage.view.*
+import retrofit2.Call
+import retrofit2.Response
+import javax.security.auth.callback.Callback
 
 class MypageTab : Fragment(), View.OnClickListener {
     /*
@@ -21,6 +30,24 @@ class MypageTab : Fragment(), View.OnClickListener {
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 통신
+        var networkService : NetworkService = ApplicationController.instance.networkService
+
+        var getMypageResponse = networkService.getMypage(SharedPreference.instance!!.getPrefStringData("token")!!)
+        getMypageResponse.enqueue(object  : retrofit2.Callback<MypageResponse> {
+            override fun onResponse(call: Call<MypageResponse>?, response: Response<MypageResponse>?) {
+                if(response!!.isSuccessful){
+                    tv_name_mypage.text = response.body().result!!.nick
+                    tv_email_mypage.text = response.body().result!!.email
+                }
+            }
+
+            override fun onFailure(call: Call<MypageResponse>?, t: Throwable?) {
+
+            }
+
+        })
 
         dobolistItems = ArrayList()
         dobolistItems.add(DobolistItem(R.drawable.home, "양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"))
