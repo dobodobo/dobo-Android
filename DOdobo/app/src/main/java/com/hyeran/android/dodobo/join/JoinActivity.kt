@@ -5,11 +5,19 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
+import com.hyeran.android.dodobo.ApplicationController
+import com.hyeran.android.dodobo.Model.BaseModel
+import com.hyeran.android.dodobo.Model.SignUp.SignUpUser
+import com.hyeran.android.dodobo.Network.NetworkService
 import com.hyeran.android.dodobo.R
+import com.hyeran.android.dodobo.Util.SharedPreference
 import com.hyeran.android.dodobo.login.LoginActivity
 import kotlinx.android.synthetic.main.activity_join.*
+import retrofit2.Call
+import retrofit2.Response
 import java.io.FileNotFoundException
 import java.io.IOException
 import java.util.regex.Matcher
@@ -17,11 +25,19 @@ import java.util.regex.Pattern
 
 class JoinActivity : AppCompatActivity() {
 
+    // 통신
+    lateinit var signUpUser: SignUpUser
+    lateinit var networkService: NetworkService
+
     var REQ_CODE_SELECT_IMAGE = 100;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join)
+
+        networkService = ApplicationController.instance!!.networkService
+        SharedPreference.instance!!.load(this)
+
         btn_changephoto_join.setOnClickListener{
             changePhoto()
         }
@@ -38,6 +54,7 @@ class JoinActivity : AppCompatActivity() {
                         et_passwordcheck_jogin.setBackgroundResource(R.drawable.login_textbox_error)
                         Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
                     } else {
+                        postSignUp()
                         Toast.makeText(this, "회원가입을 축하합니다.", Toast.LENGTH_SHORT).show()
                         var intent = Intent(baseContext, LoginActivity::class.java)
                         startActivity(intent)
@@ -88,5 +105,26 @@ class JoinActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    fun postSignUp() {
+        signUpUser = SignUpUser(et_email_jogin.text.toString(), et_password_jogin.text.toString(), et_name_jogin.text.toString(), "aaa")
+
+        val signUpResponse = networkService.postSignUp(signUpUser)
+
+        signUpResponse.enqueue(object : retrofit2.Callback<BaseModel> {
+            override fun onFailure(call: Call<BaseModel>?, t: Throwable?) {
+
+            }
+
+            override fun onResponse(call: Call<BaseModel>?, response: Response<BaseModel>?) {
+                if (response!!.isSuccessful) {
+                    Log.v("회원가입 성공", response!!.message())
+                } else {
+                    Log.e("회원가입 실패", response!!.message())
+                }
+            }
+
+        })
     }
 }
