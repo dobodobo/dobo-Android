@@ -26,6 +26,7 @@
         <activity android:name=".recommend.SeoulightDetailActivity" />
         <activity android:name=".dobo.DoboDetailActivity" />
         <activity android:name=".login.LoginActivity">
+
         </activity>
         <activity android:name=".recommend.CourseEnrollActivity" />
         <activity android:name=".join.JoinActivity"></activity>
@@ -40,7 +41,8 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
