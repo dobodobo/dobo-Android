@@ -12,5 +12,6 @@ data class MypageResponse (
 
 data class MypageResult(
         var email : String,
-        var nick : String
+        var nick : String,
+        var role : String
 )

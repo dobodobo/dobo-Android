@@ -119,6 +119,15 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
         tv_name_modify.text = intent.getStringExtra("nick")
         tv_email_modify.text = intent.getStringExtra("email")
+        var role = intent.getStringExtra("role")
+
+        if(role == "SEOULITE") {
+            btn_applyseoulight_modify.visibility = View.INVISIBLE
+            icon_seoulight_modify.visibility = View.VISIBLE
+        } else {
+            btn_applyseoulight_modify.visibility = View.VISIBLE
+            icon_seoulight_modify.visibility = View.INVISIBLE
+        }
 
         // EditText 커서 위치 끝으로 이동
         et_password1_modify.setSelection(et_password1_modify.text.length)

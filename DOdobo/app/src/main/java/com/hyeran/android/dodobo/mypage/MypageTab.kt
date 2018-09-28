@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +30,7 @@ class MypageTab : Fragment(), View.OnClickListener {
     https://stackoverflow.com/questions/48620115/kotlin-recyclerview-gave-me-null-pointer-exception
      */
     lateinit var intent : Intent
+    lateinit var role : String
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,6 +44,18 @@ class MypageTab : Fragment(), View.OnClickListener {
                 if(response!!.isSuccessful){
                     tv_name_mypage.text = response.body().result!!.nick
                     tv_email_mypage.text = response.body().result!!.email
+                    role = response.body().result!!.role
+                    if(role == "SEOULITE") {   // 서울라이트일 때
+                        icon_seoulight_modify.visibility = View.VISIBLE
+                        btn_applyseoulight_mypage.visibility = View.INVISIBLE
+                        tv_openlist_mypage.visibility = View.VISIBLE
+                        rv_openlist_mypage.visibility = View.VISIBLE
+                    } else {
+                        icon_seoulight_modify.visibility = View.INVISIBLE
+                        btn_applyseoulight_mypage.visibility = View.VISIBLE
+                        tv_openlist_mypage.visibility = View.INVISIBLE
+                        rv_openlist_mypage.visibility = View.INVISIBLE
+                    }
                 }
             }
 
@@ -81,6 +95,7 @@ class MypageTab : Fragment(), View.OnClickListener {
                 // 인텐트 간 데이터 전달
                 intent.putExtra("nick", tv_name_mypage.text)
                 intent.putExtra("email", tv_email_mypage.text)
+                intent.putExtra("role", role)
 
                 startActivity(intent)
             }
