@@ -6,12 +6,16 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
 import android.widget.Spinner
 import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
+import com.hyeran.android.dodobo.recyclerview.courseenroll_image.CourseImgAdapter
+import com.hyeran.android.dodobo.recyclerview.courseenroll_image.CourseImgItem
 import kotlinx.android.synthetic.main.activity_course_enroll.*
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -94,6 +98,10 @@ class CourseEnrollActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_course_enroll)
 
+
+        lateinit var courseImgItems : ArrayList<CourseImgItem>
+        lateinit var courseImgAdapter : CourseImgAdapter
+
         btn_back_courseenroll.setOnClickListener(this)
         btn_culture_courseenroll.setOnClickListener(this)
         btn_history_courseenroll.setOnClickListener(this)
@@ -103,6 +111,17 @@ class CourseEnrollActivity : AppCompatActivity(), View.OnClickListener {
         btn_etc_courseenroll.setOnClickListener(this)
         btn_addphoto_courseenroll.setOnClickListener(this)
         et_coursename_courseenroll.setOnClickListener(this)
+
+        courseImgItems = ArrayList()
+        courseImgItems.add(CourseImgItem(R.drawable.ic_ad_image))
+        courseImgItems.add(CourseImgItem(R.drawable.ic_ad_image))
+        courseImgItems.add(CourseImgItem(R.drawable.ic_ad_image))
+
+        var rv_couseimg = findViewById<View>(R.id.rv_image_courseenroll) as RecyclerView
+        courseImgAdapter = CourseImgAdapter(courseImgItems)
+        rv_couseimg?.layoutManager = LinearLayoutManager(this)
+        (rv_couseimg.layoutManager as LinearLayoutManager).orientation = LinearLayoutManager.HORIZONTAL
+        rv_couseimg?.adapter = courseImgAdapter
 
         icons = ArrayList()
         icons.add(CourseSpinner(R.drawable.ic_see_course))

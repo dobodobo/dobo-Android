@@ -45,7 +45,7 @@
                 <ImageView
                     android:layout_width="190dp"
                     android:layout_height="110dp"
-                    android:src="#579f9d"
+                    android:src="@drawable/bamdokkaebi_photo"
                     />
             </RelativeLayout>
             <TextView
@@ -101,8 +101,7 @@
             <ImageView
                 android:layout_width="190dp"
                 android:layout_height="110dp"
-                android:src="#579f9d"
-                android:background="#FFFFFF"
+                android:src="@drawable/forest_photo"
                 android:elevation="4dp"
                 />
         </RelativeLayout>
@@ -133,7 +132,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#585858"
                 android:textSize="8sp"
-                android:text="2018.09.18"
+                android:text="2018.10.18"
                 android:layout_marginLeft="1dp"
                 android:fontFamily="@font/nanumsquare_regular"/>
             <ImageView

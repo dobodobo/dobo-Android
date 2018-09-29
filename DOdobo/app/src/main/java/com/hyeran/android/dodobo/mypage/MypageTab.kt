@@ -18,6 +18,7 @@ import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.Util.SharedPreference
 import com.hyeran.android.dodobo.recyclerview.mypagelist.DobolistAdapter
 import com.hyeran.android.dodobo.recyclerview.mypagelist.DobolistItem
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_mypage.*
 import kotlinx.android.synthetic.main.fragment_mypage.view.*
 import retrofit2.Call
@@ -53,8 +54,8 @@ class MypageTab : Fragment(), View.OnClickListener {
                     } else {
                         icon_seoulight_modify.visibility = View.INVISIBLE
                         btn_applyseoulight_mypage.visibility = View.VISIBLE
-                        tv_openlist_mypage.visibility = View.INVISIBLE
-                        rv_openlist_mypage.visibility = View.INVISIBLE
+                        tv_openlist_mypage.visibility = View.GONE
+                        rv_openlist_mypage.visibility = View.GONE
                     }
                 }
             }
@@ -63,13 +64,13 @@ class MypageTab : Fragment(), View.OnClickListener {
 
             }
 
+
         })
 
 
         dobolistItems = ArrayList()
         dobolistItems.add(DobolistItem(R.drawable.home, "양재 시민의 숲(매헌)\n꽃 시장 탐방 코스"))
         dobolistItems.add(DobolistItem(R.drawable.home, "서울 나무 공방 탐험기!\n- 재질부터 완성까지 "))
-
 
         var rv_applylist = view!!.findViewById<View>(R.id.rv_applylist_mypage) as RecyclerView
         dobolistAdapter = DobolistAdapter(dobolistItems, context!!)

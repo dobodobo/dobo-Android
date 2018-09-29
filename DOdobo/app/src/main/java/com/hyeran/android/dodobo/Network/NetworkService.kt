@@ -8,6 +8,7 @@ import com.hyeran.android.dodobo.Model.MyPage.SeoulightRegisterData
 import com.hyeran.android.dodobo.Model.SignIn.SignInResponse
 import com.hyeran.android.dodobo.Model.SignIn.SignInUser
 import com.hyeran.android.dodobo.Model.SignUp.SignUpUser
+import com.hyeran.android.dodobo.Model.dobo.DoboListResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -25,6 +26,16 @@ interface NetworkService {
     fun postSignIn(
             @Body signInUser: SignInUser
     ): Call<SignInResponse>
+
+    // 서울 도보관광 리스트 - GET
+    @GET("/seoul/{category}")
+    fun getDoboList(
+            @Header("token") token: String,
+            @Path("category") idx:Int
+    ): Call<DoboListResponse>
+
+    // 서울 도보관광 리뷰 등록 - POST
+    @POST("")
 
     // =============================================== 비밀번호 수정 - PUT
     @PUT("users/pwd")
@@ -54,7 +65,7 @@ interface NetworkService {
             @Body seoulightRegisterData: SeoulightRegisterData
     ): Call<BaseModel>
 
-    // 마이페이지 - GET (△)
+    // 마이페이지 - GET (avatarX)
     @GET("users/mypage")
     fun getMypage(
             @Header("token") token: String

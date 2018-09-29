@@ -13,5 +13,6 @@ data class MypageResponse (
 data class MypageResult(
         var email : String,
         var nick : String,
+        var avatar : String?,
         var role : String
 )

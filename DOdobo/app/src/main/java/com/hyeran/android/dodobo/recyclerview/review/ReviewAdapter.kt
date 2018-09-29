@@ -1,6 +1,7 @@
 package com.hyeran.android.dodobo.recyclerview.review
 
 import android.app.Activity
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -13,9 +14,15 @@ import kotlinx.android.synthetic.main.item_review.view.*
 
 // DataClass와 ViewHolder 연결
 class ReviewAdapter(private var reviewItems: ArrayList<ReviewItem>) : RecyclerView.Adapter<ReviewViewHolder>(){
+    private  lateinit var  onItemClick : View.OnClickListener
+
+    fun setOnItemClickListener(l : View.OnClickListener) {
+        onItemClick = l
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewViewHolder {
         val mainView : View = LayoutInflater.from(parent.context).inflate(R.layout.item_review, parent, false)
+        mainView.setOnClickListener(onItemClick)
 
         mainView.btn_notify_review.setOnClickListener {
         }

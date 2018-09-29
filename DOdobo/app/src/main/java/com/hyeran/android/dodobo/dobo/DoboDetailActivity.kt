@@ -4,8 +4,10 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.hyeran.android.dodobo.AddReviewDialog
 import com.hyeran.android.dodobo.ImgSlideAdapter
+import com.hyeran.android.dodobo.NotifyReviewDialog
 import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
 import com.hyeran.android.dodobo.recyclerview.course.CourseItem
 import com.hyeran.android.dodobo.recyclerview.review.ReviewAdapter
@@ -22,7 +24,10 @@ http://debuglog.tistory.com/63
 뷰페이저 넘어갈때 마다 이벤트 정의 참고 링크
 https://code.i-harness.com/ko-kr/q/142863a
  */
-class DoboDetailActivity : AppCompatActivity() {
+class DoboDetailActivity : AppCompatActivity(), View.OnClickListener {
+    override fun onClick(v: View?) {
+       NotifyReviewDialog(this).show()
+    }
 
     // 이미지 슬라이더 사용 변수
     lateinit var imgSlideAdapter : ImgSlideAdapter
@@ -107,6 +112,7 @@ class DoboDetailActivity : AppCompatActivity() {
         reviewItems.add(ReviewItem("신지은", "2018.09.23", "푸핫 아주 좋은 곳이네요!"))
 
         reviewAdapter = ReviewAdapter(reviewItems)
+        reviewAdapter.setOnItemClickListener(this)
         rv_review_dobodetail.layoutManager = LinearLayoutManager(this)
         rv_review_dobodetail.adapter = reviewAdapter
     }

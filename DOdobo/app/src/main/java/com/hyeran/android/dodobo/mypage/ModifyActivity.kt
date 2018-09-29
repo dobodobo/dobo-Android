@@ -119,6 +119,7 @@ class ModifyActivity : AppCompatActivity(), View.OnClickListener {
 
         tv_name_modify.text = intent.getStringExtra("nick")
         tv_email_modify.text = intent.getStringExtra("email")
+
         var role = intent.getStringExtra("role")
 
         if(role == "SEOULITE") {

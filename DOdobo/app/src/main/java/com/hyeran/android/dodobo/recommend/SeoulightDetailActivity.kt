@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
+import android.widget.Toast
 import com.hyeran.android.dodobo.AddReviewDialog
 import com.hyeran.android.dodobo.ImgSlideAdapter
+import com.hyeran.android.dodobo.NotifyReviewDialog
 import com.hyeran.android.dodobo.R
 import com.hyeran.android.dodobo.recyclerview.course.CourseAdapter
 import com.hyeran.android.dodobo.recyclerview.course.CourseItem
@@ -22,7 +25,10 @@ http://debuglog.tistory.com/63
 이메일 연결 참고 링크
 http://purplecowd.tistory.com/entry/android-email-%EB%B3%B4%EB%82%B4%EA%B8%B0-%ED%8C%8C%EC%9D%BC%EC%B2%A8%EB%B6%80-%ED%8F%AC%ED%95%A8
  */
-class SeoulightDetailActivity : AppCompatActivity(){
+class SeoulightDetailActivity : AppCompatActivity(), View.OnClickListener{
+    override fun onClick(v: View?) {
+        NotifyReviewDialog(this).show()
+    }
 
     // 이미지 슬라이더 사용 변수
     lateinit var imgSliderAdapter : ImgSlideAdapter
@@ -96,6 +102,7 @@ class SeoulightDetailActivity : AppCompatActivity(){
         reviewItems.add(ReviewItem("신지은", "2018.09.23", "푸핫 아주 좋은 곳이네요!"))
 
         reviewAdapter = ReviewAdapter(reviewItems)
+        reviewAdapter.setOnItemClickListener(this)
         rv_review_seoulight.layoutManager = LinearLayoutManager(this)
         rv_review_seoulight.adapter = reviewAdapter
 
